@@ -1,0 +1,214 @@
+@import '@unocss/reset/tailwind.css';
+
+/* PTNA Theme Variables */
+:root {
+  /* Primary Colors */
+  --ptna-primary: #770000;
+  --ptna-primary-light: #990000;
+  --ptna-primary-dark: #550000;
+  
+  /* Secondary Colors */
+  --ptna-white: #ffffff;
+  --ptna-black: #000000;
+  --ptna-gray-light: #f5f5f5;
+  --ptna-gray: #666666;
+  --ptna-gray-dark: #333333;
+  
+  /* Theme Colors */
+  --slidev-theme-primary: var(--ptna-primary);
+  --slidev-theme-accent: var(--ptna-white);
+  --slidev-theme-bg: var(--ptna-white);
+  --slidev-theme-fg: var(--ptna-black);
+}
+
+html.dark {
+  --slidev-theme-bg: var(--ptna-black);
+  --slidev-theme-fg: var(--ptna-white);
+}
+
+/* Global Styles */
+html {
+  font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
+  text-rendering: optimizeLegibility;
+}
+
+.slidev-layout {
+  font-family: 'Noto Sans JP', ui-sans-serif, system-ui, sans-serif;
+  line-height: 1.6;
+  color: var(--slidev-theme-fg);
+  background: var(--slidev-theme-bg);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: 0.5em;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: var(--ptna-primary);
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 2rem;
+  color: var(--ptna-primary);
+  margin-bottom: 0.75rem;
+  border-bottom: 2px solid var(--ptna-primary);
+  padding-bottom: 0.25rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: var(--ptna-primary-dark);
+}
+
+h4 {
+  font-size: 1.25rem;
+  color: var(--ptna-gray-dark);
+}
+
+/* Links */
+a {
+  color: var(--ptna-primary);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  border-bottom-color: var(--ptna-primary);
+}
+
+/* Code */
+code {
+  background: var(--ptna-gray-light);
+  color: var(--ptna-black);
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+  font-size: 0.9em;
+}
+
+html.dark code {
+  background: var(--ptna-gray-dark);
+  color: var(--ptna-white);
+}
+
+pre {
+  background: var(--ptna-gray-light) !important;
+  border: 1px solid #e5e5e5;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+html.dark pre {
+  background: var(--ptna-gray-dark) !important;
+  border-color: #404040;
+}
+
+/* Lists */
+ul, ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+li {
+  margin-bottom: 0.25rem;
+}
+
+/* Blockquotes */
+blockquote {
+  border-left: 4px solid var(--ptna-primary);
+  padding-left: 1rem;
+  margin: 1rem 0;
+  font-style: italic;
+  background: var(--ptna-gray-light);
+  padding: 1rem;
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+html.dark blockquote {
+  background: var(--ptna-gray-dark);
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+th, td {
+  padding: 0.5rem 1rem;
+  border: 1px solid #e5e5e5;
+  text-align: left;
+}
+
+th {
+  background: var(--ptna-primary);
+  color: white;
+  font-weight: 600;
+}
+
+html.dark th,
+html.dark td {
+  border-color: #404040;
+}
+
+/* Buttons and Interactive Elements */
+.btn {
+  background: var(--ptna-primary);
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background: var(--ptna-primary-light);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--ptna-primary);
+  border: 2px solid var(--ptna-primary);
+}
+
+.btn-outline:hover {
+  background: var(--ptna-primary);
+  color: white;
+}
+
+/* Utility Classes */
+.text-primary {
+  color: var(--ptna-primary) !important;
+}
+
+.bg-primary {
+  background-color: var(--ptna-primary) !important;
+}
+
+.border-primary {
+  border-color: var(--ptna-primary) !important;
+}
+
+/* Navigation */
+.slidev-nav {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+}
+
+html.dark .slidev-nav {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+/* Page number */
+.slidev-layout .slidev-page-number {
+  color: var(--ptna-primary);
+  font-weight: 500;
+}
