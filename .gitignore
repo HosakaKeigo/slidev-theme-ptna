@@ -1,1 +1,12 @@
-node_modules
+/node_modules
+/.nuxt
+/dist
+/.output
+/.vercel
+/.svelte-kit
+/.sapper
+/.next
+/.cache
+/.idea
+/.vscode
+.DS_Store
