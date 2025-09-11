@@ -187,6 +187,103 @@ layout: default
    - 近現代音楽
 
 ---
+layout: default
+---
+
+# Mermaid ダイアグラムの例
+
+ピアノ教育のプロセスをMermaidダイアグラムで可視化できます。
+
+## 指導者育成フロー
+
+```mermaid {scale: 1.0}
+flowchart LR
+    A[入会申込] --> B{資格確認}
+    B -->|有資格| C[基礎研修]
+    B -->|無資格| D[基礎講習]
+    D --> C
+    C --> E[実習期間]
+    E --> F{評価試験}
+    F -->|合格| G[指導者認定]
+    F -->|不合格| H[追加研修]
+    H --> F
+    G --> I[継続研修]
+    I --> J[上級検定]
+```
+
+---
+layout: default
+---
+
+# Mermaid ガントチャートの例
+
+## 年間活動スケジュール
+
+```mermaid
+gantt
+    title PTNAピアノコンペティション年間スケジュール
+    dateFormat  YYYY-MM-DD
+    section 準備期間
+    参加申込受付    :a1, 2024-01-01, 2024-03-31
+    課題曲発表      :milestone, 2024-02-15, 0d
+    section 地区予選
+    地区予選A       :a2, 2024-04-01, 2024-05-31
+    地区予選B       :a3, 2024-06-01, 2024-07-15
+    section 全国大会
+    本選準備        :a4, 2024-07-16, 2024-08-15
+    全国大会        :crit, milestone, 2024-08-20, 5d
+    section 表彰・総括
+    表彰式          :milestone, 2024-09-15, 0d
+    総括レポート    :a5, 2024-09-16, 2024-10-31
+```
+
+---
+layout: default
+---
+
+# Mermaid 円グラフの例
+
+## 参加者構成
+
+```mermaid {scale: 1.0}
+pie showData
+  title コンペ参加者構成
+  "幼児・小学生" : 35
+  "中学生" : 25
+  "高校生" : 20
+  "大学生" : 10
+  "一般" : 10
+```
+
+---
+layout: default
+---
+
+# Mermaid シーケンス図の例
+
+## レッスン予約システム
+
+```mermaid
+sequenceDiagram
+    participant S as 生徒
+    participant T as 講師
+    participant SYS as システム
+    participant DB as データベース
+    
+    S->>SYS: レッスン予約希望
+    SYS->>DB: 講師スケジュール確認
+    DB-->>SYS: 空き時間返却
+    SYS-->>S: 空き時間表示
+    S->>SYS: 時間選択・予約
+    SYS->>DB: 予約データ保存
+    SYS->>T: 予約通知送信
+    T-->>SYS: 確認応答
+    SYS-->>S: 予約完了通知
+    
+    Note over S,DB: レッスン日時確定
+```
+
+---
 layout: center
 class: text-center
 ---
