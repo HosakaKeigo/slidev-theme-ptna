@@ -29,7 +29,7 @@ const style = computed(() => handleBackground(props.background))
     
     <!-- Ptnyan character -->
     <div class="absolute bottom-12 right-12 opacity-60 pointer-events-none">
-      <img src="/assets/ptnyan/ptnyan-front.png" alt="Ptnyan" class="h-32 w-auto" />
+      <img src="/ptnyan/ptnyan-front.png" alt="Ptnyan" class="h-32 w-auto" />
     </div>
 
   </div>

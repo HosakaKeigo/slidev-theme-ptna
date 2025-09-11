@@ -26,7 +26,7 @@ const style = computed(() => handleBackground(props.background))
         <!-- Ptnyan thanks character -->
         <div class="flex justify-center mb-8">
           <img 
-            src="/assets/ptnyan/ptnyan-thanks.png" 
+            src="/ptnyan/ptnyan-thanks.png" 
             alt="Ptnyan thanks" 
             class="h-64 w-auto"
           />

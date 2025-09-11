@@ -37,7 +37,7 @@ const style = computed(() => handleBackground(props.background))
     
     <!-- Ptnyan quote character -->
     <div class="absolute bottom-16 right-16 opacity-70 pointer-events-none">
-      <img src="/assets/ptnyan/quote.png" alt="Ptnyan with book" class="h-48 w-auto" />
+      <img src="/ptnyan/quote.png" alt="Ptnyan with book" class="h-48 w-auto" />
     </div>
   </div>
 </template>

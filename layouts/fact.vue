@@ -23,7 +23,7 @@ const style = computed(() => handleBackground(props.background))
       <!-- Ptnyan fact character positioned just above the fact -->
       <div class="mt-8">
         <img 
-          src="/assets/ptnyan/ptnyan-fact.png" 
+          src="/ptnyan/ptnyan-fact.png" 
           alt="Ptnyan fact" 
           class="h-64 w-auto opacity-80"
         />
