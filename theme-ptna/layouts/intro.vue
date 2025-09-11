@@ -2,6 +2,7 @@
 import { computed } from 'vue'
 import { handleBackground } from '../layoutHelper'
 import PtnaLogo from '../components/PtnaLogo.vue'
+import PianoKeyFooter from '../components/PianoKeyFooter.vue'
 
 const props = defineProps({
   background: {
@@ -10,14 +11,6 @@ const props = defineProps({
 })
 
 const style = computed(() => handleBackground(props.background))
-
-// Piano key pattern: C, C#, D, D#, E, F, F#, G, G#, A, A#, B (black keys: 2, 3, 2, 3 pattern)
-const getKeyColor = (index: number) => {
-  const keyIndex = (index - 1) % 12
-  // Black keys are at positions: 1, 3, 6, 8, 10 (C#, D#, F#, G#, A#)
-  const blackKeys = [1, 3, 6, 8, 10]
-  return blackKeys.includes(keyIndex) ? 'bg-gray-800' : 'bg-white'
-}
 </script>
 
 <template>
@@ -28,16 +21,6 @@ const getKeyColor = (index: number) => {
       <slot />
     </div>
     
-    <!-- Subtle piano key pattern -->
-    <div class="absolute bottom-0 left-0 right-0 h-16 opacity-10">
-      <div class="flex h-full">
-        <div v-for="i in 88" :key="i" 
-             :class="[
-               'flex-1 border-r border-gray-300',
-               getKeyColor(i)
-             ]"
-        ></div>
-      </div>
-    </div>
+    <PianoKeyFooter />
   </div>
 </template>
