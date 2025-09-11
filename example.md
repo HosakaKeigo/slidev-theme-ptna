@@ -1,6 +1,6 @@
 ---
 theme: ./
-layout: title
+layout: cover
 class: text-center
 highlighter: shiki
 lineNumbers: false
@@ -329,7 +329,7 @@ sequenceDiagram
 ```
 
 ---
-layout: image-text
+layout: image-left
 image: https://ptnyan-assets.s3.ap-northeast-1.amazonaws.com/public/filemaker/1000283.png
 ---
 
@@ -347,7 +347,7 @@ image: https://ptnyan-assets.s3.ap-northeast-1.amazonaws.com/public/filemaker/10
 画像は自動的にサイズ調整され、美しく表示されます。
 
 ---
-layout: image-text
+layout: image-right
 image: https://ptnyan-assets.s3.ap-northeast-1.amazonaws.com/public/filemaker/1000283.png
 imagePosition: left
 ---
@@ -431,7 +431,33 @@ hideInToc: true
 ```
 
 ---
-layout: closing
+layout: two-cols-header
+---
+
+# 2カラムレイアウトの例
+
+## 左右に分割されたコンテンツ
+
+このレイアウトでは、左右に分割された2カラムのコンテンツを表示できます。
+
+::left::
+
+### 左カラム
+
+- ポイント1
+- ポイント2
+- ポイント3
+
+::right::
+
+### 右カラム
+
+- ポイントA
+- ポイントB
+- ポイントC
+
+---
+layout: end
 ---
 
 # ありがとうございました
@@ -441,14 +467,3 @@ layout: closing
 ## 今後ともよろしくお願いいたします
 
 PTNAは音楽教育の発展と指導者の育成に全力で取り組んでまいります。
-
----
-layout: center
-class: text-center
----
-
-# お問い合わせ
-
-[全日本ピアノ指導者協会](https://www.piano.or.jp)
-
-<PoweredBySliddev mt-10 />
