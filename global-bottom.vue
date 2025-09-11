@@ -1,0 +1,1 @@
+<!-- You can customize the global bottom layout by modifying the styles and structure as needed. -->
