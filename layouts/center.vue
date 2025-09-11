@@ -3,6 +3,7 @@ import { computed } from 'vue'
 import { handleBackground } from '../layoutHelper'
 import PtnaLogo from '../components/PtnaLogo.vue'
 import PageIndicator from '../components/PageIndicator.vue'
+import MusicalDecorations from '../components/MusicalDecorations.vue'
 
 const props = defineProps({
   background: {
@@ -20,13 +21,7 @@ const style = computed(() => handleBackground(props.background))
       <slot />
     </div>
     
-    <!-- Subtle background pattern -->
-    <div class="absolute inset-0 overflow-hidden pointer-events-none opacity-5">
-      <div class="absolute top-1/4 left-1/4 text-ptna-primary text-6xl transform -rotate-12">♪</div>
-      <div class="absolute top-3/4 right-1/4 text-ptna-primary text-5xl transform rotate-12">♫</div>
-      <div class="absolute top-1/2 left-1/6 text-ptna-primary text-4xl">♬</div>
-      <div class="absolute top-1/2 right-1/6 text-ptna-primary text-4xl">♩</div>
-    </div>
+    <MusicalDecorations variant="default" :opacity="0.05" />
     
     <PageIndicator />
   </div>

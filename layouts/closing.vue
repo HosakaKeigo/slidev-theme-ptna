@@ -2,6 +2,7 @@
 import { computed } from 'vue'
 import { handleBackground } from '../layoutHelper'
 import PtnaLogo from '../components/PtnaLogo.vue'
+import MusicalDecorations from '../components/MusicalDecorations.vue'
 
 const props = defineProps({
   background: {
@@ -40,13 +41,7 @@ const style = computed(() => handleBackground(props.background))
       </div>
     </div>
     
-    <!-- Decorative musical notes -->
-    <div class="absolute inset-0 overflow-hidden pointer-events-none opacity-10">
-      <div class="absolute top-1/4 left-1/6 text-ptna-primary text-5xl animate-pulse">♪</div>
-      <div class="absolute top-1/3 right-1/6 text-ptna-primary text-4xl animate-pulse" style="animation-delay: 1s;">♫</div>
-      <div class="absolute bottom-1/3 left-1/4 text-ptna-primary text-6xl animate-pulse" style="animation-delay: 2s;">♬</div>
-      <div class="absolute bottom-1/4 right-1/4 text-ptna-primary text-3xl animate-pulse" style="animation-delay: 3s;">♩</div>
-    </div>
+    <MusicalDecorations variant="animated" :opacity="0.1" :animate="true" />
   </div>
 </template>
 

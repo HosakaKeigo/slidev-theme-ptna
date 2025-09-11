@@ -3,6 +3,7 @@ import { computed } from 'vue'
 import { handleBackground } from '../layoutHelper'
 import PtnaLogo from '../components/PtnaLogo.vue'
 import PageIndicator from '../components/PageIndicator.vue'
+import MusicalDecorations from '../components/MusicalDecorations.vue'
 
 const props = defineProps({
   background: {
@@ -44,7 +45,9 @@ const style = computed(() => handleBackground(props.background))
         
         <!-- Vertical divider with musical theme (only between columns) -->
         <div class="absolute -right-4 top-0 bottom-0 w-0.5 bg-ptna-primary opacity-20"></div>
-        <div class="absolute -right-6 top-1/2 transform -translate-y-1/2 text-ptna-primary opacity-30 text-xl">♪</div>
+        <div class="absolute -right-6 top-1/2 transform -translate-y-1/2">
+          <MusicalDecorations variant="divider" :opacity="0.3" />
+        </div>
       </div>
       
       <!-- Right column -->

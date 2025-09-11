@@ -2,6 +2,7 @@
 import { computed } from 'vue'
 import { handleBackground } from '../layoutHelper'
 import PtnaLogo from '../components/PtnaLogo.vue'
+import MusicalDecorations from '../components/MusicalDecorations.vue'
 
 const props = defineProps({
   background: {
@@ -20,11 +21,7 @@ const style = computed(() => handleBackground(props.background))
     
     <!-- Elegant border with musical motif -->
     <div class="absolute inset-8 border-2 border-ptna-primary opacity-20 rounded-lg pointer-events-none">
-      <!-- Corner musical decorations -->
-      <div class="absolute -top-3 -left-3 bg-white text-ptna-primary text-2xl">♪</div>
-      <div class="absolute -top-3 -right-3 bg-white text-ptna-primary text-2xl">♫</div>
-      <div class="absolute -bottom-3 -left-3 bg-white text-ptna-primary text-2xl">♬</div>
-      <div class="absolute -bottom-3 -right-3 bg-white text-ptna-primary text-2xl">♩</div>
+      <MusicalDecorations variant="corners" :opacity="1" />
     </div>
     
     <!-- Ptnyan character -->

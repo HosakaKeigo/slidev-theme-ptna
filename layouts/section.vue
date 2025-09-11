@@ -2,6 +2,7 @@
 import { computed } from 'vue'
 import { handleBackground } from '../layoutHelper'
 import PtnaLogo from '../components/PtnaLogo.vue'
+import MusicalDecorations from '../components/MusicalDecorations.vue'
 
 const props = defineProps({
   background: {
@@ -19,15 +20,7 @@ const style = computed(() => handleBackground(props.background))
       <slot />
     </div>
     
-    <!-- Musical decoration -->
-    <div class="absolute inset-0 overflow-hidden pointer-events-none">
-      <div class="absolute top-1/4 left-1/4 transform -translate-x-1/2 -translate-y-1/2">
-        <div class="text-ptna-primary opacity-5 text-9xl">♪</div>
-      </div>
-      <div class="absolute bottom-1/4 right-1/4 transform translate-x-1/2 translate-y-1/2">
-        <div class="text-ptna-primary opacity-5 text-8xl">♫</div>
-      </div>
-    </div>
+    <MusicalDecorations variant="section" :opacity="0.05" />
   </div>
 </template>
 

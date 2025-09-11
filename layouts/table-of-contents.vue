@@ -2,6 +2,7 @@
 import { computed, onMounted, ref } from 'vue'
 import { handleBackground } from '../layoutHelper'
 import PtnaLogo from '../components/PtnaLogo.vue'
+import MusicalDecorations from '../components/MusicalDecorations.vue'
 
 const props = defineProps({
   background: {
@@ -90,13 +91,7 @@ onMounted(() => {
       </div>
     </div>
     
-    <!-- Decorative elements -->
-    <div class="absolute inset-0 overflow-hidden pointer-events-none opacity-5">
-      <div class="absolute top-1/4 left-1/6 text-ptna-primary text-6xl transform -rotate-12">📖</div>
-      <div class="absolute top-3/4 right-1/6 text-ptna-primary text-5xl transform rotate-12">📑</div>
-      <div class="absolute bottom-1/4 left-1/4 text-ptna-primary text-4xl">📋</div>
-      <div class="absolute bottom-1/4 right-1/4 text-ptna-primary text-4xl">📚</div>
-    </div>
+    <MusicalDecorations variant="books" :opacity="0.05" />
   </div>
 </template>
 
