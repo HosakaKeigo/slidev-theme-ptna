@@ -284,6 +284,49 @@ sequenceDiagram
 ```
 
 ---
+layout: image-text
+image: https://ptnyan-assets.s3.ap-northeast-1.amazonaws.com/public/filemaker/1000283.png
+---
+
+# 画像とテキストのレイアウト例
+
+このレイアウトでは、画像とテキストを効果的に組み合わせて表示できます。
+
+## 主な特徴
+
+- **自動画像配置**: imageプロパティで簡単に画像を指定
+- **位置選択**: 左右どちらにも配置可能
+- **レスポンシブ対応**: モバイルデバイスで最適化
+- **PTNAテーマ**: 音楽記号の装飾付き
+
+画像は自動的にサイズ調整され、美しく表示されます。
+
+---
+layout: image-text
+image: https://ptnyan-assets.s3.ap-northeast-1.amazonaws.com/public/filemaker/1000283.png
+imagePosition: left
+---
+
+# 画像を左側に配置
+
+`imagePosition: left` を指定することで、画像を左側に配置できます。
+
+## 使用方法
+
+```markdown
+---
+layout: image-text
+image: /path/to/your/image.jpg
+imagePosition: left
+---
+
+# タイトル
+ここにテキスト内容を記述します。
+```
+
+テキストの内容に応じて、画像の位置を柔軟に調整できます。
+
+---
 layout: center
 class: text-center
 ---
