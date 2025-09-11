@@ -54,7 +54,7 @@ const style = computed(() => handleBackground(props.background))
       <div class="flex-1 flex items-center justify-center">
         <div class="w-full max-w-4xl">
           <Toc
-            columns="2"
+            :columns="columns"
             :listClass="['ptna-toc-list', listClass].flat().filter(Boolean)"
             :maxDepth="maxDepth"
             :minDepth="minDepth"

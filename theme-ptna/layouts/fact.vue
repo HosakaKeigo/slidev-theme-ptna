@@ -15,8 +15,19 @@ const style = computed(() => handleBackground(props.background))
 <template>
   <div class="slidev-layout fact" :style="style">
     <PtnaLogo />
-    <div class="relative z-10">
+    
+    <!-- Main content centered -->
+    <div class="h-full flex flex-col items-center justify-center relative z-20">
       <slot />
+      
+      <!-- Ptnyan fact character positioned just above the fact -->
+      <div class="mt-8">
+        <img 
+          src="/assets/ptnyan/ptnyan-fact.png" 
+          alt="Ptnyan fact" 
+          class="h-64 w-auto opacity-80"
+        />
+      </div>
     </div>
     
     <!-- Animated musical notes -->
