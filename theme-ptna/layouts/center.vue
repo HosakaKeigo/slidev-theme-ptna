@@ -2,6 +2,7 @@
 import { computed } from 'vue'
 import { handleBackground } from '../layoutHelper'
 import PtnaLogo from '../components/PtnaLogo.vue'
+import PageIndicator from '../components/PageIndicator.vue'
 
 const props = defineProps({
   background: {
@@ -26,6 +27,8 @@ const style = computed(() => handleBackground(props.background))
       <div class="absolute top-1/2 left-1/6 text-ptna-primary text-4xl">♬</div>
       <div class="absolute top-1/2 right-1/6 text-ptna-primary text-4xl">♩</div>
     </div>
+    
+    <PageIndicator />
   </div>
 </template>
 
@@ -33,4 +36,5 @@ const style = computed(() => handleBackground(props.background))
 .text-ptna-primary {
   color: var(--ptna-primary);
 }
+
 </style>
