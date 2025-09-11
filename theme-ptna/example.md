@@ -33,6 +33,10 @@ title: PTNA Slidev Theme
 
 
 ---
+layout: table-of-contents
+---
+
+---
 layout: intro
 ---
 
@@ -158,6 +162,43 @@ class PTNAInstructor {
     return this.lessons.reduce((sum, lesson) => sum + lesson.duration, 0)
   }
 }
+```
+
+---
+layout: default
+---
+
+# YouTubeコンポーネントの例
+
+Slidevでは、built-inのYouTubeコンポーネントを使用して動画を簡単に埋め込むことができます。
+
+## 基本的な使用方法
+
+<Youtube id="qTlTMRryo5I" width="480" height="270" />
+
+## カスタムサイズでの表示
+
+<Youtube id="qTlTMRryo5I" width="400" height="225" />
+
+## 特定の時間から開始
+
+特定の時間から動画を開始したい場合は、IDに`?start=秒数`を追加できます：
+
+```markdown
+<Youtube id="qTlTMRryo5I?start=30" />
+```
+
+## コード例
+
+```markdown
+<!-- 基本使用法（推奨サイズ） -->
+<Youtube id="動画ID" width="480" height="270" />
+
+<!-- 小さめサイズ -->
+<Youtube id="動画ID" width="400" height="225" />
+
+<!-- 開始時間指定 -->
+<Youtube id="動画ID?start=30" width="480" height="270" />
 ```
 
 ---
@@ -325,6 +366,64 @@ imagePosition: left
 ```
 
 テキストの内容に応じて、画像の位置を柔軟に調整できます。
+
+---
+layout: table-of-contents
+columns: 3
+---
+
+# Table of Contentsレイアウトの例
+
+このレイアウトでは、Tocコンポーネントをラップして美しい目次ページを作成できます。
+
+## 主な機能
+
+- **カスタマイズ可能な表示**: columns、maxDepth、minDepthなどのプロパティ対応
+- **PTNAテーマデザイン**: 音楽記号とテーマカラーを使用
+- **レスポンシブ対応**: モバイルデバイスで最適化
+
+---
+layout: default
+hideInToc: true
+---
+
+# Tocコンポーネントの使用方法
+
+`hideInToc: true`を設定したこのページは目次に表示されません。
+
+## 基本的な使用方法
+
+```markdown
+---
+layout: table-of-contents
+---
+
+# 目次
+
+プレゼンテーションの構成
+```
+
+## プロパティ例
+
+```markdown
+---
+layout: table-of-contents
+columns: 2
+maxDepth: 2
+minDepth: 1
+mode: 'all'
+---
+```
+
+## hideInTocオプション
+
+特定のスライドを目次に表示したくない場合：
+
+```markdown
+---
+hideInToc: true
+---
+```
 
 ---
 layout: closing
