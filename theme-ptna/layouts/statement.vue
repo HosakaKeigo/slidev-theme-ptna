@@ -2,7 +2,6 @@
 import { computed } from 'vue'
 import { handleBackground } from '../layoutHelper'
 import PtnaLogo from '../components/PtnaLogo.vue'
-import PianoKeyFooter from '../components/PianoKeyFooter.vue'
 
 const props = defineProps({
   background: {
@@ -15,7 +14,6 @@ const style = computed(() => handleBackground(props.background))
 
 <template>
   <div class="slidev-layout statement" :style="style">
-    <PtnaLogo />
     <div class="relative z-10">
       <slot />
     </div>
@@ -27,6 +25,11 @@ const style = computed(() => handleBackground(props.background))
       <div class="absolute -top-3 -right-3 bg-white text-ptna-primary text-2xl">♫</div>
       <div class="absolute -bottom-3 -left-3 bg-white text-ptna-primary text-2xl">♬</div>
       <div class="absolute -bottom-3 -right-3 bg-white text-ptna-primary text-2xl">♩</div>
+    </div>
+    
+    <!-- Ptnyan character -->
+    <div class="absolute bottom-12 right-12 opacity-60 pointer-events-none">
+      <img src="/assets/ptnyan/ptnyan-front.png" alt="Ptnyan" class="h-32 w-auto" />
     </div>
 
   </div>
@@ -40,4 +43,5 @@ const style = computed(() => handleBackground(props.background))
 .text-ptna-primary {
   color: var(--ptna-primary);
 }
+
 </style>

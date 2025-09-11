@@ -2,7 +2,6 @@
 import { computed } from 'vue'
 import { handleBackground } from '../layoutHelper'
 import PtnaLogo from '../components/PtnaLogo.vue'
-import PianoKeyFooter from '../components/PianoKeyFooter.vue'
 
 const props = defineProps({
   background: {
@@ -34,6 +33,11 @@ const style = computed(() => handleBackground(props.background))
           </div>
         </div>
       </div>
+    </div>
+    
+    <!-- Ptnyan quote character -->
+    <div class="absolute bottom-16 right-16 opacity-70 pointer-events-none">
+      <img src="/assets/ptnyan/quote.png" alt="Ptnyan with book" class="h-48 w-auto" />
     </div>
   </div>
 </template>
