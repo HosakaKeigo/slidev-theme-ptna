@@ -1,3 +1,19 @@
+<!--
+Center Layout - 中央寄せレイアウト
+
+使用用途:
+- コンテンツを中央に寄せて表示したい場合
+- コードブロックやダイアグラムの表示
+- シンプルなメッセージや情報の強調
+- フォーカスしたいコンテンツの表示
+
+特徴:
+- コンテンツが画面中央に配置
+- 控えめな背景音符装飾（低透明度）
+- ページ番号とPTNAロゴの自動配置
+- シンプルで見やすいデザイン
+-->
+
 <script setup lang="ts">
 import { computed } from "vue";
 import { handleBackground } from "../layoutHelper";

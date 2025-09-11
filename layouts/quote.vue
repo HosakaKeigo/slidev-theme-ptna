@@ -1,3 +1,19 @@
+<!--
+Quote Layout - 引用文表示用レイアウト
+
+使用用途:
+- 名言や引用文の表示
+- PTNAの理念やメッセージの紹介
+- 有名人や専門家のコメント
+- 音楽に関する名言や格言
+
+特徴:
+- 大きな引用符（"）の装飾
+- 五線譜ラインの背景装飾
+- Ptnyanキャラクターの装飾（quote.png）
+- エレガントで読みやすいデザイン
+-->
+
 <script setup lang="ts">
 import { computed } from "vue";
 import { handleBackground } from "../layoutHelper";

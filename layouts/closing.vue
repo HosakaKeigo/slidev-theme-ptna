@@ -1,3 +1,19 @@
+<!--
+Closing Layout - 結び・終了ページ用レイアウト
+
+使用用途:
+- プレゼンテーションの結び・終了ページ
+- 感謝のメッセージ表示
+- 質疑応答への橋渡し
+- 連絡先やフォローアップ情報の案内
+
+特徴:
+- 「ご清聴ありがとうございました」メッセージの自動表示
+- Ptnyanキャラクターの装飾（ptnyan-thanks.png）
+- アニメーション付き音符装飾
+- 温かみのあるグラデーション背景
+-->
+
 <script setup lang="ts">
 import { computed } from "vue";
 import { handleBackground } from "../layoutHelper";

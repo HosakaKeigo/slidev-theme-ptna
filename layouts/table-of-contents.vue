@@ -1,3 +1,19 @@
+<!--
+Table of Contents Layout - 目次表示用レイアウト
+
+使用用途:
+- プレゼンテーションの目次・アジェンダ表示
+- 内容の概要や構成の紹介
+- スライドの構成を一覧で表示したい場合
+- 聴衆に全体の流れを提示したい場合
+
+特徴:
+- 自動的な目次項目生成（h1、h2等から）
+- 10項目以上で自動で2列表示
+- 連番バッジの自動付与（黒丸白文字）
+- 本や文書の絵文字装飾
+-->
+
 <script setup lang="ts">
 import { computed, onMounted, ref } from "vue";
 import { handleBackground } from "../layoutHelper";

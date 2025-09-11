@@ -1,3 +1,19 @@
+<!--
+Fact Layout - 数値・事実強調表示用レイアウト
+
+使用用途:
+- 重要な数値や統計の強調表示
+- 事実やデータのインパクトのある提示
+- 年数、人数、割合等の数値情報
+- 「77」「47年」などの象徴的な数字
+
+特徴:
+- 中央寄せレイアウトで数値を大きく表示
+- Ptnyanキャラクターの装飾（ptnyan-fact.png）
+- アニメーション付き音符装飾
+- 目を引くインパクトのあるデザイン
+-->
+
 <script setup lang="ts">
 import { computed } from "vue";
 import { handleBackground } from "../layoutHelper";

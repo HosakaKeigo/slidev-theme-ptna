@@ -1,3 +1,19 @@
+<!--
+Title Layout - タイトルページ用レイアウト
+
+使用用途:
+- シンプルなタイトルページ
+- 中間ページでのタイトル表示
+- テキスト中心のシンプルなページ
+- coverレイアウトよりも控えめなタイトルページ
+
+特徴:
+- ピアノ鍵盤パターンの下部装飾
+- PTNAロゴの自動配置
+- シンプルで清潔なデザイン
+- タイトルコンテンツの中央寄せ表示
+-->
+
 <script setup lang="ts">
 import { computed } from "vue";
 import { handleBackground } from "../layoutHelper";

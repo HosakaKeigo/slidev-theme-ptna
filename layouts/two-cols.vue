@@ -1,3 +1,19 @@
+<!--
+Two Columns Layout - 2カラムレイアウト
+
+使用用途:
+- 内容を左右に分けて表示したい場合
+- 比較表や対比情報の表示
+- プログラムやカリキュラムの項目分け
+- 理論と実践などの関連情報の並列表示
+
+特徴:
+- ::left:: と ::right:: でコンテンツを分割
+- 中央の縦線に音符装飾
+- 左右のバランスの取れたレイアウト
+- ページ番号とPTNAロゴの自動配置
+-->
+
 <script setup lang="ts">
 import { computed } from "vue";
 import { handleBackground } from "../layoutHelper";

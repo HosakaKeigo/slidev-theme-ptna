@@ -1,3 +1,19 @@
+<!--
+Image Text Layout - 画像とテキスト組み合わせレイアウト
+
+使用用途:
+- 画像と説明テキストを並べて表示
+- 写真や図表の説明
+- プロダクトやサービスの紹介
+- 人物紹介やインタビューページ
+
+特徴:
+- 画像を左右どちらにも配置可能
+- imagePosition: 'left' | 'right' で位置指定
+- 中央の縦線に音符装飾
+- 画像とテキストのバランスの取れたレイアウト
+-->
+
 <script setup lang="ts">
 import { computed } from "vue";
 import { handleBackground } from "../layoutHelper";

@@ -1,3 +1,19 @@
+<!--
+Statement Layout - 声明・宣言用レイアウト
+
+使用用途:
+- 重要な声明や宣言の発表
+- PTNAのミッションやビジョンの説明
+- メッセージ性の強いコンテンツ
+- 呼びかけやアクションの促し
+
+特徴:
+- エレガントな枠線で囲まれたデザイン
+- 四隅に音符装飾
+- Ptnyanキャラクターの装飾（ptnyan-front.png）
+- 正式で信頼感のあるデザイン
+-->
+
 <script setup lang="ts">
 import { computed } from "vue";
 import { handleBackground } from "../layoutHelper";
