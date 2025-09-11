@@ -32,6 +32,16 @@ const style = computed(() => handleBackground(props.background));
 <template>
   <div class="slidev-layout section" :style="style">
     <PtnaLogo />
+    
+    <!-- Ptnyan play piano character -->
+    <div class="absolute bottom-8 right-8 z-10">
+      <img 
+        src="/ptnyan/ptnyan-play-piano.png" 
+        alt="Ptnyan playing piano" 
+        class="h-96 w-auto opacity-80"
+      />
+    </div>
+    
     <div class="relative z-10">
       <slot />
     </div>
