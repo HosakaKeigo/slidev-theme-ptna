@@ -5,7 +5,7 @@
       <div class="header-content">
         <div class="logo-area">
           <img 
-            src="/assets/ptna-logo.png" 
+            src="/ptna-logo.svg" 
             alt="PTNA Logo" 
             class="ptna-logo"
             v-if="$frontmatter.showLogo !== false"

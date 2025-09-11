@@ -10,7 +10,7 @@
       <!-- Logo Section -->
       <div class="logo-section">
         <img 
-          src="/assets/ptna-logo-large.png" 
+          src="/ptna-logo-large.svg" 
           alt="PTNA Logo" 
           class="ptna-logo-large"
           v-if="$frontmatter.showLogo !== false"
