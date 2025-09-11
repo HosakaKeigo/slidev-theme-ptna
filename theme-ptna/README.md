@@ -7,7 +7,7 @@
 - **PTNAブランドカラー**: メインカラー #770000（深紅）を基調としたエレガントなデザイン
 - **音楽的な要素**: 音符や五線譜などの音楽モチーフを随所に配置
 - **日本語フォント対応**: ヒラギノ角ゴシック等の日本語フォントに最適化
-- **多様なレイアウト**: プレゼンテーション用途に応じた8種類のレイアウト
+- **多様なレイアウト**: プレゼンテーション用途に応じたレイアウトを多数用意（`cover`/`default`/`section`/`intro`/`fact`/`quote`/`statement`/`two-cols`/`center`/`table-of-contents`）
 - **レスポンシブデザイン**: デスクトップ・モバイル両対応
 
 ## レイアウト一覧
@@ -39,6 +39,9 @@
 ### `center`
 中央配置レイアウト。背景に控えめな音符パターン。
 
+### `table-of-contents`
+目次レイアウト。各項目の左に黒丸白字の連番バッジを自動表示し、マルチカラムにも対応します。
+
 ## 使用方法
 
 ### インストール
@@ -47,13 +50,15 @@
 npm install @slidev/theme-ptna
 ```
 
+対応バージョン: Slidev v0.47 以上
+
 ### 基本設定
 
 スライドファイル（`slides.md`）の冒頭に以下を追加：
 
 ```yaml
 ---
-theme: ptna
+theme: ptna # or '@slidev/theme-ptna'
 highlighter: shiki
 lineNumbers: false
 info: |
@@ -122,6 +127,109 @@ fonts:
 ---
 ```
 
+## 目次レイアウト（table-of-contents）
+
+各スライドに応じて柔軟に目次を生成します。連番バッジは自動付与（1始まり）され、列をまたぐ箇所でも見切れにくいよう最適化しています。
+
+最小構成
+
+```md
+---
+layout: table-of-contents
+---
+```
+
+主なプロパティ（frontmatter）
+
+- `columns`: 列数（デフォルト: 1）。例: `columns: 2`
+- `maxDepth`: 取得する見出しの最大レベル。例: `maxDepth: 2`
+- `minDepth`: 取得する見出しの最小レベル。例: `minDepth: 1`
+- `mode`: 取得対象。`all` | `onlyCurrentTree` | `onlySiblings`（デフォルト: `all`）
+- `listClass`: 追加のクラスをリストへ付与（スタイルを局所的に上書きしたい場合に使用）
+
+カラム間隔をさらに広げたい場合（例）
+
+```html
+<style>
+.slidev-layout.table-of-contents :deep(.ptna-toc-list[style*="column"]) {
+  column-gap: 6rem; /* Safari 対応なら -webkit-column-gap も */
+}
+</style>
+```
+
+番号バッジを隠したい場合（例）
+
+```html
+<style>
+.slidev-layout.table-of-contents :deep(.ptna-toc-list > li::before) {
+  display: none;
+}
+</style>
+```
+
+ヘッダーの差し替え
+
+```md
+---
+layout: table-of-contents
+---
+
+::title::
+# この発表の流れ
+::
+
+任意の説明文をここに入れられます。
+```
+
+備考
+
+- カラム切り替わり時の見切れを抑制するため、リスト項目は分割されにくいスタイルになっています。
+- ネストされた見出しは左ラインのみのシンプル表示（トップレベルに連番）。
+
+## Mermaid 図表の利用
+
+本テーマは Slidev の Mermaid 対応を前提にそのまま利用できます。コードブロックに `mermaid` を指定してください。
+
+フローチャート例
+
+```mermaid
+flowchart LR
+  A[入会申込] --> B{資格確認}
+  B -->|有資格| C[基礎研修]
+  B -->|無資格| D[基礎講習]
+```
+
+ガントチャート例
+
+```mermaid
+gantt
+  title 年間スケジュール
+  dateFormat  YYYY-MM-DD
+  企画 :a1, 2024-01-01, 2024-02-15
+  実施 :a2, 2024-02-16, 2024-03-31
+```
+
+シーケンス図例
+
+```mermaid
+sequenceDiagram
+  participant S as 生徒
+  participant T as 講師
+  S->>T: 予約の確認
+```
+
+円グラフ（pieChart）例
+
+```mermaid
+pie showData
+  title 参加者構成
+  "幼児・小学生" : 35
+  "中学生" : 25
+  "高校生" : 20
+  "大学生" : 10
+  "一般" : 10
+```
+
 ## 開発
 
 ### ローカル開発
@@ -132,6 +240,8 @@ cd slidev-theme-ptna
 npm install
 npm run dev
 ```
+
+ローカルテーマとして試す（このリポジトリ直下の `theme-ptna/example.md` を開くか、別の Slidev プロジェクトで `theme: ./` を指定）
 
 ### ビルド
 
@@ -158,6 +268,8 @@ MIT License
 ## 貢献
 
 プルリクエストやissueの報告を歓迎します。
+
+不具合やご要望（例: 目次のスタイル微調整、Mermaidの見た目最適化など）があれば、Issueにてお知らせください。
 
 ## 関連リンク
 
