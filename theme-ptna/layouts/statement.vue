@@ -2,6 +2,7 @@
 import { computed } from 'vue'
 import { handleBackground } from '../layoutHelper'
 import PtnaLogo from '../components/PtnaLogo.vue'
+import PianoKeyFooter from '../components/PianoKeyFooter.vue'
 
 const props = defineProps({
   background: {
@@ -27,6 +28,7 @@ const style = computed(() => handleBackground(props.background))
       <div class="absolute -bottom-3 -left-3 bg-white text-ptna-primary text-2xl">♬</div>
       <div class="absolute -bottom-3 -right-3 bg-white text-ptna-primary text-2xl">♩</div>
     </div>
+
   </div>
 </template>
 

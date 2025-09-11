@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { handleBackground } from '../layoutHelper'
+import PianoKeyFooter from '../components/PianoKeyFooter.vue'
 
 const props = defineProps({
   background: {
@@ -33,5 +34,7 @@ const style = computed(() => handleBackground(props.background, true))
     <div class="absolute top-8 left-8 opacity-20 text-white text-6xl">♫</div>
     <div class="absolute bottom-16 left-16 opacity-15 text-white text-4xl">♪</div>
     <div class="absolute top-16 right-24 opacity-10 text-white text-5xl">♬</div>
+    
+    <PianoKeyFooter />
   </div>
 </template>
