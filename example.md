@@ -33,12 +33,12 @@ title: PTNA Slidev Theme
 </div>
 
 ---
-
-## layout: table-of-contents
-
+layout: table-of-contents
 ---
 
-## layout: intro
+---
+layout: intro
+---
 
 # はじめに
 
@@ -53,14 +53,14 @@ title: PTNA Slidev Theme
 私たちは音楽を通じて豊かな社会の実現を目指しています。
 
 ---
-
-## layout: section
+layout: section
+---
 
 # 活動内容
 
 ---
-
-## layout: default
+layout: default
+---
 
 # PTNAの主な活動
 
@@ -81,8 +81,8 @@ title: PTNA Slidev Theme
 出版活動、コンサート企画、地域との連携を通じて音楽文化の発展に貢献
 
 ---
-
-## layout: two-cols
+layout: two-cols
+---
 
 # 教育システム
 
@@ -120,32 +120,30 @@ PTNAの体系的な教育システムをご紹介します。
 - ステップアドバイザー
 
 ---
-
-## layout: fact
+layout: fact
+---
 
 # 77
 
 設立から**47年**の歴史
 
 ---
-
-## layout: quote
+layout: quote
+---
 
 # "音楽は人生を豊かにする最高の贈り物である"
 
 _— PTNA創設者の言葉_
 
 ---
-
-## layout: statement
+layout: statement
+---
 
 # 音楽教育の未来を共に創造しましょう
 
 ---
-
 layout: center
 class: text-center
-
 ---
 
 # コードサンプル
@@ -171,8 +169,8 @@ class PTNAInstructor {
 ```
 
 ---
-
-## layout: default
+layout: default
+---
 
 # YouTubeコンポーネントの例
 
@@ -208,8 +206,8 @@ Slidevでは、built-inのYouTubeコンポーネントを使用して動画を�
 ```
 
 ---
-
-## layout: default
+layout: default
+---
 
 # 表の例
 
@@ -234,8 +232,8 @@ Slidevでは、built-inのYouTubeコンポーネントを使用して動画を�
    - 近現代音楽
 
 ---
-
-## layout: default
+layout: default
+---
 
 # Mermaid ダイアグラムの例
 
@@ -259,8 +257,8 @@ flowchart LR
 ```
 
 ---
-
-## layout: default
+layout: default
+---
 
 # Mermaid ガントチャートの例
 
@@ -285,8 +283,8 @@ gantt
 ```
 
 ---
-
-## layout: default
+layout: default
+---
 
 # Mermaid 円グラフの例
 
@@ -303,8 +301,8 @@ pie showData
 ```
 
 ---
-
-## layout: default
+layout: default
+---
 
 # Mermaid シーケンス図の例
 
@@ -331,10 +329,8 @@ sequenceDiagram
 ```
 
 ---
-
 layout: image-text
 image: https://ptnyan-assets.s3.ap-northeast-1.amazonaws.com/public/filemaker/1000283.png
-
 ---
 
 # 画像とテキストのレイアウト例
@@ -351,11 +347,9 @@ image: https://ptnyan-assets.s3.ap-northeast-1.amazonaws.com/public/filemaker/10
 画像は自動的にサイズ調整され、美しく表示されます。
 
 ---
-
 layout: image-text
 image: https://ptnyan-assets.s3.ap-northeast-1.amazonaws.com/public/filemaker/1000283.png
 imagePosition: left
-
 ---
 
 # 画像を左側に配置
@@ -379,10 +373,8 @@ imagePosition: left
 テキストの内容に応じて、画像の位置を柔軟に調整できます。
 
 ---
-
 layout: table-of-contents
 columns: 3
-
 ---
 
 # Table of Contentsレイアウトの例
@@ -396,10 +388,8 @@ columns: 3
 - **レスポンシブ対応**: モバイルデバイスで最適化
 
 ---
-
 layout: default
 hideInToc: true
-
 ---
 
 # Tocコンポーネントの使用方法
@@ -441,8 +431,8 @@ hideInToc: true
 ```
 
 ---
-
-## layout: closing
+layout: closing
+---
 
 # ありがとうございました
 
@@ -453,10 +443,8 @@ hideInToc: true
 PTNAは音楽教育の発展と指導者の育成に全力で取り組んでまいります。
 
 ---
-
 layout: center
 class: text-center
-
 ---
 
 # お問い合わせ
