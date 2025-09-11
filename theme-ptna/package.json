@@ -1,0 +1,43 @@
+{
+  "name": "@slidev/theme-ptna",
+  "version": "0.1.0",
+  "description": "PTNA (全日本ピアノ指導者協会) theme for Slidev",
+  "author": "Hosaka Keigo <hosaka@piano.or.jp>",
+  "license": "MIT",
+  "homepage": "https://www.piano.or.jp",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HosakaKeigo/slidev-theme-ptna"
+  },
+  "keywords": [
+    "slidev-theme",
+    "slidev",
+    "ptna",
+    "piano"
+  ],
+  "engines": {
+    "node": ">=14.0.0",
+    "slidev": ">=v0.47.0"
+  },
+  "slidev": {
+    "defaults": {
+      "fonts": {
+        "mono": "Fira Code",
+        "sans": "Hiragino Kaku Gothic ProN, Hiragino Sans, Yu Gothic UI, Meiryo UI, sans-serif",
+        "serif": "Hiragino Mincho ProN, Yu Mincho, serif",
+        "local": "Hiragino Kaku Gothic ProN"
+      },
+      "highlighter": "prism",
+      "colorSchema": "light",
+      "routerMode": "history",
+      "aspectRatio": "16/9",
+      "canvasWidth": 1920,
+      "background": "#ffffff"
+    }
+  },
+  "dependencies": {
+    "@slidev/types": "^0.47.0",
+    "codemirror-theme-vars": "^0.1.2",
+    "prism-theme-vars": "^0.2.4"
+  }
+}

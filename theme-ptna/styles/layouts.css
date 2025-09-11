@@ -1,0 +1,363 @@
+:root {
+  --ptna-primary: #770000;
+  --ptna-primary-light: #aa0000;
+  --ptna-primary-dark: #550000;
+  --ptna-secondary: #ffffff;
+  --ptna-accent: #000000;
+  --ptna-gray: #666666;
+  --ptna-light-gray: #f5f5f5;
+  --ptna-border: #e0e0e0;
+
+  /* テキストカラー */
+  --ptna-text-primary: #333333;
+  --ptna-text-secondary: #666666;
+  --ptna-text-muted: #999999;
+
+  /* 背景グラデーション */
+  --ptna-gradient-primary: linear-gradient(135deg, #770000 0%, #550000 100%);
+  --ptna-gradient-light: linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%);
+}
+
+.slidev-layout {
+  font-family: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Yu Gothic UI', 'Meiryo UI', sans-serif;
+  color: var(--ptna-text-primary);
+  line-height: 1.6;
+}
+
+.slidev-layout h1 {
+  @apply text-5xl font-bold mb-6;
+  color: var(--ptna-primary);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.slidev-layout h2 {
+  @apply text-4xl font-semibold mb-4;
+  color: var(--ptna-primary);
+  letter-spacing: -0.01em;
+}
+
+.slidev-layout h3 {
+  @apply text-3xl font-medium mb-3;
+  color: var(--ptna-text-primary);
+}
+
+.slidev-layout h4 {
+  @apply text-2xl font-medium mb-2;
+  color: var(--ptna-text-primary);
+}
+
+.slidev-layout h5 {
+  @apply text-xl font-medium mb-2;
+  color: var(--ptna-text-secondary);
+}
+
+.slidev-layout h6 {
+  @apply text-lg font-medium mb-1;
+  color: var(--ptna-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.slidev-layout p {
+  @apply mb-4;
+  color: var(--ptna-text-primary);
+}
+
+.slidev-layout ul,
+.slidev-layout ol {
+  @apply mb-4 pl-6;
+}
+
+.slidev-layout li {
+  @apply mb-2;
+  color: var(--ptna-text-primary);
+}
+
+.slidev-layout li::marker {
+  color: var(--ptna-primary);
+}
+
+.slidev-layout blockquote {
+  @apply border-l-4 pl-4 py-2 mb-4;
+  border-left-color: var(--ptna-primary);
+  background: var(--ptna-light-gray);
+  color: var(--ptna-text-secondary);
+  font-style: italic;
+}
+
+.slidev-layout strong {
+  color: var(--ptna-primary);
+  font-weight: 700;
+}
+
+.slidev-layout a {
+  color: var(--ptna-primary);
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.slidev-layout a:hover {
+  color: var(--ptna-primary-light);
+}
+
+/* カバーページ */
+.slidev-layout.cover {
+  @apply h-full grid;
+  background: var(--ptna-gradient-primary);
+  color: white;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.slidev-layout.cover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M30 30c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20zm10 0c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+  opacity: 0.1;
+}
+
+.slidev-layout.cover h1 {
+  @apply text-7xl font-bold leading-tight;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  margin-bottom: 1rem;
+}
+
+.slidev-layout.cover p {
+  @apply text-2xl;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* セクションページ */
+.slidev-layout.section {
+  @apply h-full grid place-content-center text-center;
+  background: var(--ptna-gradient-light);
+  padding: 2rem;
+}
+
+.slidev-layout.section h1 {
+  @apply text-6xl font-bold;
+  color: var(--ptna-primary);
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.slidev-layout.section h1::after {
+  content: '';
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4rem;
+  height: 4px;
+  background: var(--ptna-primary);
+}
+
+/* イントロページ */
+.slidev-layout.intro {
+  @apply h-full grid;
+  padding: 3rem;
+}
+
+.slidev-layout.intro h1 {
+  @apply text-6xl font-bold mb-8;
+  color: var(--ptna-primary);
+}
+
+.slidev-layout.intro p {
+  @apply text-xl leading-relaxed;
+  color: var(--ptna-text-secondary);
+}
+
+/* ファクトページ */
+.slidev-layout.fact {
+  @apply h-full grid place-content-center text-center;
+  background: var(--ptna-light-gray);
+}
+
+.slidev-layout.fact h1 {
+  @apply text-9xl font-bold;
+  color: var(--ptna-primary);
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.slidev-layout.fact p {
+  @apply text-3xl font-medium;
+  color: var(--ptna-text-secondary);
+}
+
+/* 引用ページ */
+.slidev-layout.quote {
+  @apply h-full grid place-content-center;
+  background: var(--ptna-gradient-light);
+  padding: 4rem;
+}
+
+.slidev-layout.quote h1 {
+  @apply text-4xl font-light italic mb-6;
+  color: var(--ptna-text-primary);
+  text-align: center;
+  position: relative;
+}
+
+.slidev-layout.quote h1::before {
+  content: '"';
+  @apply text-8xl;
+  color: var(--ptna-primary);
+  position: absolute;
+  top: -2rem;
+  left: -2rem;
+  opacity: 0.3;
+}
+
+.slidev-layout.quote h1::after {
+  content: '"';
+  @apply text-8xl;
+  color: var(--ptna-primary);
+  position: absolute;
+  bottom: -2rem;
+  right: -2rem;
+  opacity: 0.3;
+}
+
+.slidev-layout.quote p {
+  @apply text-xl text-center;
+  color: var(--ptna-text-secondary);
+}
+
+/* ステートメントページ */
+.slidev-layout.statement {
+  @apply h-full grid place-content-center text-center;
+  padding: 3rem;
+}
+
+.slidev-layout.statement h1 {
+  @apply text-6xl font-bold;
+  color: var(--ptna-primary);
+  margin-bottom: 2rem;
+}
+
+.slidev-layout.statement p {
+  @apply text-2xl;
+  color: var(--ptna-text-secondary);
+}
+
+/* デフォルトレイアウト */
+.slidev-layout.default {
+  padding: 2rem 3rem;
+}
+
+/* ツーカラム */
+.slidev-layout.two-cols {
+  padding: 2rem 3rem;
+}
+
+.slidev-layout.two-cols .col-left,
+.slidev-layout.two-cols .col-right {
+  padding: 0 1rem;
+}
+
+/* 中央配置 */
+.slidev-layout.center {
+  @apply h-full grid place-content-center;
+  text-align: center;
+  padding: 2rem;
+}
+
+/* コードブロック */
+.slidev-layout pre {
+  @apply rounded-lg p-4 mb-4;
+  background: var(--ptna-accent);
+  color: white;
+  overflow-x: auto;
+}
+
+.slidev-layout code {
+  background: var(--ptna-light-gray);
+  color: var(--ptna-primary);
+  @apply px-2 py-1 rounded;
+  font-family: 'Fira Code', monospace;
+}
+
+/* テーブル */
+.slidev-layout table {
+  @apply w-full mb-6;
+  border-collapse: collapse;
+}
+
+.slidev-layout th,
+.slidev-layout td {
+  @apply px-4 py-2 border;
+  border-color: var(--ptna-border);
+  text-align: left;
+}
+
+.slidev-layout th {
+  background: var(--ptna-light-gray);
+  color: var(--ptna-primary);
+  font-weight: 600;
+}
+
+/* アニメーション */
+.slidev-layout .slide-enter-active,
+.slidev-layout .slide-leave-active {
+  transition: all 0.3s ease;
+}
+
+.slidev-layout .slide-enter-from {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.slidev-layout .slide-leave-to {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+/* モバイル対応 */
+@media (max-width: 768px) {
+  .slidev-layout {
+    padding: 1rem;
+  }
+
+  .slidev-layout h1 {
+    @apply text-4xl;
+  }
+
+  .slidev-layout h2 {
+    @apply text-3xl;
+  }
+
+  .slidev-layout.cover h1 {
+    @apply text-5xl;
+  }
+
+  .slidev-layout.section h1 {
+    @apply text-4xl;
+  }
+
+  .slidev-layout.fact h1 {
+    @apply text-6xl;
+  }
+}
+
+/* 印刷スタイル */
+@media print {
+  .slidev-layout {
+    background: white !important;
+    color: black !important;
+  }
+
+  .slidev-layout h1,
+  .slidev-layout h2 {
+    color: var(--ptna-primary) !important;
+  }
+}
