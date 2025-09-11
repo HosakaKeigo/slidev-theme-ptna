@@ -14,10 +14,16 @@ importers:
       codemirror-theme-vars:
         specifier: ^0.1.2
         version: 0.1.2
+      vue:
+        specifier: ^3.5.21
+        version: 3.5.21(typescript@5.9.2)
     devDependencies:
       '@slidev/cli':
         specifier: ^52.1.0
         version: 52.1.0(@babel/parser@7.28.4)(@nuxt/kit@3.19.1)(@types/markdown-it@14.1.2)(@types/node@22.18.1)(@vue/compiler-sfc@3.5.21)(markdown-it-async@2.2.0)(postcss@8.5.6)
+      '@types/vue':
+        specifier: ^2.0.0
+        version: 2.0.0(typescript@5.9.2)
 
 packages:
 
@@ -748,6 +754,10 @@ packages:
 
   '@types/unist@3.0.3':
     resolution: {integrity: sha512-ko/gIFJRv177XgZsZcBwnqJN5x/Gien8qNOn0D5bQU/zAzVf9Zt3BlcUiLqhV9y4ARk0GbT3tnUiPNgnTXzc/Q==}
+
+  '@types/vue@2.0.0':
+    resolution: {integrity: sha512-WDElkBv/o4lVwu6wYHB06AXs4Xo2fwDjJUpvPRc1QQdzkUSiGFjrYuSCy8raxLE5FObgKq8ND7R5gSZTFLK60w==}
+    deprecated: This is a stub types definition for vuejs (https://github.com/vuejs/vue). vuejs provides its own type definitions, so you don't need @types/vue installed!
 
   '@types/web-bluetooth@0.0.21':
     resolution: {integrity: sha512-oIQLCGWtcFZy2JW77j9k8nHzAOpqMHLQejDA48XXMWH6tjCQHz5RCFz1bzsmROyL6PUm+LLnUiI4BCn221inxA==}
@@ -3642,6 +3652,12 @@ snapshots:
     optional: true
 
   '@types/unist@3.0.3': {}
+
+  '@types/vue@2.0.0(typescript@5.9.2)':
+    dependencies:
+      vue: 3.5.21(typescript@5.9.2)
+    transitivePeerDependencies:
+      - typescript
 
   '@types/web-bluetooth@0.0.21': {}
 
