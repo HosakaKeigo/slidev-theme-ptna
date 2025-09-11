@@ -54,7 +54,7 @@ npm install @slidev/theme-ptna
 ```yaml
 ---
 theme: ptna
-highlighter: prism
+highlighter: shiki
 lineNumbers: false
 info: |
   ## PTNAプレゼンテーション

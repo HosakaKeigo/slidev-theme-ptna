@@ -27,7 +27,7 @@
         "serif": "Hiragino Mincho ProN, Yu Mincho, serif",
         "local": "Hiragino Kaku Gothic ProN"
       },
-      "highlighter": "prism",
+      "highlighter": "shiki",
       "colorSchema": "light",
       "routerMode": "history",
       "aspectRatio": "16/9",
@@ -37,7 +37,9 @@
   },
   "dependencies": {
     "@slidev/types": "^0.47.0",
-    "codemirror-theme-vars": "^0.1.2",
-    "prism-theme-vars": "^0.2.4"
+    "codemirror-theme-vars": "^0.1.2"
+  },
+  "devDependencies": {
+    "@slidev/cli": "^52.1.0"
   }
 }
