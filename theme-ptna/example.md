@@ -1,6 +1,6 @@
 ---
 theme: ./
-background: "https://img.news.3rd-in.co.jp/storage/articles/2025/08/23/44d0626c-800e-11f0-8973-9ca3ba083d71/75391-34-5d42a9d9de3de04722e42cc0d506c602-2160x1437.webp"
+layout: title
 class: text-center
 highlighter: shiki
 lineNumbers: false
