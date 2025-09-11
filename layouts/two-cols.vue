@@ -16,19 +16,19 @@ const style = computed(() => handleBackground(props.background))
 <template>
   <div class="slidev-layout two-cols" :style="style">
     <PtnaLogo />
-    <div class="grid grid-cols-2 gap-8 h-full">
+    <div class="grid grid-cols-2 gap-8 h-full relative">
       <div class="col-left">
         <slot name="left" />
       </div>
       
+      <div class="col-right">
+        <slot name="right" />
+      </div>
+      
       <!-- Vertical divider with musical theme -->
-      <div class="relative">
-        <div class="absolute -left-4 top-0 bottom-0 w-0.5 bg-ptna-primary opacity-20"></div>
-        <div class="absolute -left-6 top-1/2 transform -translate-y-1/2 text-ptna-primary opacity-30 text-xl">♪</div>
-        
-        <div class="col-right">
-          <slot name="right" />
-        </div>
+      <div class="absolute left-1/2 top-0 bottom-0 transform -translate-x-1/2">
+        <div class="w-0.5 bg-ptna-primary opacity-20 h-full"></div>
+        <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 text-ptna-primary opacity-30 text-xl">♪</div>
       </div>
     </div>
     
