@@ -1,46 +1,50 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-import { handleBackground } from '../layoutHelper'
-import PtnaLogo from '../components/PtnaLogo.vue'
-import MusicalDecorations from '../components/MusicalDecorations.vue'
+import { computed } from "vue";
+import { handleBackground } from "../layoutHelper";
+import PtnaLogo from "../components/PtnaLogo.vue";
+import MusicalDecorations from "../components/MusicalDecorations.vue";
 
 const props = defineProps({
   background: {
-    default: '',
+    default: "",
   },
-})
+});
 
-const style = computed(() => handleBackground(props.background))
+const style = computed(() => handleBackground(props.background));
 </script>
 
 <template>
   <div class="slidev-layout closing" :style="style">
     <PtnaLogo />
-    
+
     <div class="h-full flex items-center justify-center">
       <div class="text-center max-w-4xl px-8">
         <!-- Main content -->
         <div class="mb-12">
           <slot />
         </div>
-        
+
         <!-- Ptnyan thanks character -->
         <div class="flex justify-center mb-8">
-          <img 
-            src="/ptnyan/ptnyan-thanks.png" 
-            alt="Ptnyan thanks" 
+          <img
+            src="/ptnyan/ptnyan-thanks.png"
+            alt="Ptnyan thanks"
             class="h-64 w-auto"
           />
         </div>
-        
+
         <!-- Thank you message -->
         <div class="text-center opacity-70">
-          <p class="text-xl text-ptna-text-secondary mb-4">ご清聴ありがとうございました</p>
-          <p class="text-lg text-ptna-text-muted">Thank you for your attention</p>
+          <p class="text-xl text-ptna-text-secondary mb-4">
+            ご清聴ありがとうございました
+          </p>
+          <p class="text-lg text-ptna-text-muted">
+            Thank you for your attention
+          </p>
         </div>
       </div>
     </div>
-    
+
     <MusicalDecorations variant="animated" :opacity="0.1" :animate="true" />
   </div>
 </template>
@@ -85,12 +89,13 @@ const style = computed(() => handleBackground(props.background))
 
 /* アニメーション効果 */
 @keyframes gentle-pulse {
-  0%, 100% { 
-    opacity: 0.1; 
+  0%,
+  100% {
+    opacity: 0.1;
     transform: scale(1);
   }
-  50% { 
-    opacity: 0.3; 
+  50% {
+    opacity: 0.3;
     transform: scale(1.1);
   }
 }
@@ -104,19 +109,19 @@ const style = computed(() => handleBackground(props.background))
   .slidev-layout.closing {
     padding: 1rem;
   }
-  
+
   .slidev-layout.closing h1 {
     @apply text-4xl mb-4;
   }
-  
+
   .slidev-layout.closing h2 {
     @apply text-2xl mb-3;
   }
-  
+
   .slidev-layout.closing p {
     @apply text-lg;
   }
-  
+
   .slidev-layout.closing img {
     height: 12rem !important;
   }

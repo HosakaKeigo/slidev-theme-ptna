@@ -1,21 +1,21 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-import { handleBackground } from '../layoutHelper'
-import PianoKeyFooter from '../components/PianoKeyFooter.vue'
-import PtnaLogo from '../components/PtnaLogo.vue'
+import { computed } from "vue";
+import { handleBackground } from "../layoutHelper";
+import PianoKeyFooter from "../components/PianoKeyFooter.vue";
+import PtnaLogo from "../components/PtnaLogo.vue";
 
 const props = defineProps({
   background: {
-    default: '',
+    default: "",
   },
-})
+});
 
-const style = computed(() => handleBackground(props.background))
+const style = computed(() => handleBackground(props.background));
 </script>
 
 <template>
   <PtnaLogo />
-  
+
   <div class="slidev-layout title" :style="style">
     <div class="title-content">
       <slot />

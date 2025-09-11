@@ -1,36 +1,36 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-import { handleBackground } from '../layoutHelper'
-import PtnaLogo from '../components/PtnaLogo.vue'
-import MusicalDecorations from '../components/MusicalDecorations.vue'
+import { computed } from "vue";
+import { handleBackground } from "../layoutHelper";
+import PtnaLogo from "../components/PtnaLogo.vue";
+import MusicalDecorations from "../components/MusicalDecorations.vue";
 
 const props = defineProps({
   background: {
-    default: '',
+    default: "",
   },
-})
+});
 
-const style = computed(() => handleBackground(props.background))
+const style = computed(() => handleBackground(props.background));
 </script>
 
 <template>
   <div class="slidev-layout fact" :style="style">
     <PtnaLogo />
-    
+
     <!-- Main content centered -->
     <div class="h-full flex flex-col items-center justify-center relative z-20">
       <slot />
-      
+
       <!-- Ptnyan fact character positioned just above the fact -->
       <div class="mt-8">
-        <img 
-          src="/ptnyan/ptnyan-fact.png" 
-          alt="Ptnyan fact" 
+        <img
+          src="/ptnyan/ptnyan-fact.png"
+          alt="Ptnyan fact"
           class="h-64 w-auto opacity-80"
         />
       </div>
     </div>
-    
+
     <MusicalDecorations variant="background" :opacity="0.2" :animate="true" />
   </div>
 </template>
@@ -41,13 +41,23 @@ const style = computed(() => handleBackground(props.background))
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-10px) rotate(5deg); }
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(5deg);
+  }
 }
 
 @keyframes float-delayed {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-15px) rotate(-5deg); }
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(-5deg);
+  }
 }
 
 .animate-float {

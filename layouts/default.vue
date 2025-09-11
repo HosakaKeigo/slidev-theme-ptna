@@ -1,16 +1,16 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-import { handleBackground } from '../layoutHelper'
-import PtnaLogo from '../components/PtnaLogo.vue'
-import PageIndicator from '../components/PageIndicator.vue'
+import { computed } from "vue";
+import { handleBackground } from "../layoutHelper";
+import PtnaLogo from "../components/PtnaLogo.vue";
+import PageIndicator from "../components/PageIndicator.vue";
 
 const props = defineProps({
   background: {
-    default: '',
+    default: "",
   },
-})
+});
 
-const style = computed(() => handleBackground(props.background))
+const style = computed(() => handleBackground(props.background));
 </script>
 
 <template>
@@ -18,10 +18,9 @@ const style = computed(() => handleBackground(props.background))
     <!-- PTNA Logo positioned to avoid conflict with page indicator -->
     <PtnaLogo />
     <slot />
-    
+
     <PageIndicator />
   </div>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>

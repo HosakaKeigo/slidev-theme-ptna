@@ -14,6 +14,7 @@ title: PTNA Slidev Theme
 ---
 
 # ＜スライドタイトル＞
+
 ## ＜サブタイトル＞
 
 ＜本文＞
@@ -31,16 +32,16 @@ title: PTNA Slidev Theme
   </span>
 </div>
 
-
----
-layout: table-of-contents
 ---
 
+## layout: table-of-contents
+
 ---
-layout: intro
----
+
+## layout: intro
 
 # はじめに
+
 ## PTNAについて
 
 全日本ピアノ指導者協会（PTNA）は、ピアノ指導者の育成と音楽教育の発展を目的として設立された団体です。
@@ -52,14 +53,14 @@ layout: intro
 私たちは音楽を通じて豊かな社会の実現を目指しています。
 
 ---
-layout: section
----
+
+## layout: section
 
 # 活動内容
 
 ---
-layout: default
----
+
+## layout: default
 
 # PTNAの主な活動
 
@@ -80,8 +81,8 @@ layout: default
 出版活動、コンサート企画、地域との連携を通じて音楽文化の発展に貢献
 
 ---
-layout: two-cols
----
+
+## layout: two-cols
 
 # 教育システム
 
@@ -90,6 +91,7 @@ PTNAの体系的な教育システムをご紹介します。
 ::left::
 
 ## 基礎教育
+
 - 楽典・和声学
 - 演奏技術の基礎
 - 音楽理論
@@ -97,6 +99,7 @@ PTNAの体系的な教育システムをご紹介します。
 - アナリーゼ
 
 ## 指導法研究
+
 - 年齢別指導法
 - レベル別カリキュラム
 - 発達心理学
@@ -104,66 +107,72 @@ PTNAの体系的な教育システムをご紹介します。
 ::right::
 
 ## 実践指導
+
 - レッスン見学
-- 模擬レッスン  
+- 模擬レッスン
 - 現場実習
 - 指導案作成
 
 ## 資格取得
+
 - 指導者ライセンス
 - コンペティション審査員
 - ステップアドバイザー
 
 ---
-layout: fact
----
+
+## layout: fact
 
 # 77
+
 設立から**47年**の歴史
 
 ---
-layout: quote
----
+
+## layout: quote
 
 # "音楽は人生を豊かにする最高の贈り物である"
-*— PTNA創設者の言葉*
+
+_— PTNA創設者の言葉_
 
 ---
-layout: statement
----
+
+## layout: statement
 
 # 音楽教育の未来を共に創造しましょう
 
 ---
+
 layout: center
 class: text-center
+
 ---
 
 # コードサンプル
 
 ```typescript {all|2|1-6|9|all}
 interface PianoLesson {
-  student: string
-  duration: number
-  level: 'beginner' | 'intermediate' | 'advanced'
+  student: string;
+  duration: number;
+  level: "beginner" | "intermediate" | "advanced";
 }
 
 class PTNAInstructor {
-  private lessons: PianoLesson[] = []
-  
+  private lessons: PianoLesson[] = [];
+
   scheduleLesson(lesson: PianoLesson): void {
-    this.lessons.push(lesson)
+    this.lessons.push(lesson);
   }
-  
+
   getTotalHours(): number {
-    return this.lessons.reduce((sum, lesson) => sum + lesson.duration, 0)
+    return this.lessons.reduce((sum, lesson) => sum + lesson.duration, 0);
   }
 }
 ```
 
 ---
-layout: default
----
+
+## layout: default
 
 # YouTubeコンポーネントの例
 
@@ -199,17 +208,17 @@ Slidevでは、built-inのYouTubeコンポーネントを使用して動画を�
 ```
 
 ---
-layout: default
----
+
+## layout: default
 
 # 表の例
 
-| 級位 | レベル | 課題曲数 | 試験時間 |
-|------|-------|---------|---------|
-| 指導者級 | 最上級 | 10曲 | 60分 |
-| 上級 | 上級 | 8曲 | 50分 |
-| 中級 | 中級 | 6曲 | 40分 |
-| 初級 | 初級 | 4曲 | 30分 |
+| 級位     | レベル | 課題曲数 | 試験時間 |
+| -------- | ------ | -------- | -------- |
+| 指導者級 | 最上級 | 10曲     | 60分     |
+| 上級     | 上級   | 8曲      | 50分     |
+| 中級     | 中級   | 6曲      | 40分     |
+| 初級     | 初級   | 4曲      | 30分     |
 
 ## リスト例
 
@@ -220,13 +229,13 @@ layout: default
 
 2. **楽曲演奏**
    - バロック音楽
-   - 古典派音楽  
+   - 古典派音楽
    - ロマン派音楽
    - 近現代音楽
 
 ---
-layout: default
----
+
+## layout: default
 
 # Mermaid ダイアグラムの例
 
@@ -250,8 +259,8 @@ flowchart LR
 ```
 
 ---
-layout: default
----
+
+## layout: default
 
 # Mermaid ガントチャートの例
 
@@ -276,8 +285,8 @@ gantt
 ```
 
 ---
-layout: default
----
+
+## layout: default
 
 # Mermaid 円グラフの例
 
@@ -294,8 +303,8 @@ pie showData
 ```
 
 ---
-layout: default
----
+
+## layout: default
 
 # Mermaid シーケンス図の例
 
@@ -307,7 +316,7 @@ sequenceDiagram
     participant T as 講師
     participant SYS as システム
     participant DB as データベース
-    
+
     S->>SYS: レッスン予約希望
     SYS->>DB: 講師スケジュール確認
     DB-->>SYS: 空き時間返却
@@ -317,13 +326,15 @@ sequenceDiagram
     SYS->>T: 予約通知送信
     T-->>SYS: 確認応答
     SYS-->>S: 予約完了通知
-    
+
     Note over S,DB: レッスン日時確定
 ```
 
 ---
+
 layout: image-text
 image: https://ptnyan-assets.s3.ap-northeast-1.amazonaws.com/public/filemaker/1000283.png
+
 ---
 
 # 画像とテキストのレイアウト例
@@ -340,9 +351,11 @@ image: https://ptnyan-assets.s3.ap-northeast-1.amazonaws.com/public/filemaker/10
 画像は自動的にサイズ調整され、美しく表示されます。
 
 ---
+
 layout: image-text
 image: https://ptnyan-assets.s3.ap-northeast-1.amazonaws.com/public/filemaker/1000283.png
 imagePosition: left
+
 ---
 
 # 画像を左側に配置
@@ -359,14 +372,17 @@ imagePosition: left
 ---
 
 # タイトル
+
 ここにテキスト内容を記述します。
 ```
 
 テキストの内容に応じて、画像の位置を柔軟に調整できます。
 
 ---
+
 layout: table-of-contents
 columns: 3
+
 ---
 
 # Table of Contentsレイアウトの例
@@ -380,8 +396,10 @@ columns: 3
 - **レスポンシブ対応**: モバイルデバイスで最適化
 
 ---
+
 layout: default
 hideInToc: true
+
 ---
 
 # Tocコンポーネントの使用方法
@@ -408,7 +426,7 @@ layout: table-of-contents
 columns: 2
 maxDepth: 2
 minDepth: 1
-mode: 'all'
+mode: "all"
 ---
 ```
 
@@ -423,8 +441,8 @@ hideInToc: true
 ```
 
 ---
-layout: closing
----
+
+## layout: closing
 
 # ありがとうございました
 
@@ -435,8 +453,10 @@ layout: closing
 PTNAは音楽教育の発展と指導者の育成に全力で取り組んでまいります。
 
 ---
+
 layout: center
 class: text-center
+
 ---
 
 # お問い合わせ

@@ -1,17 +1,17 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-import { handleBackground } from '../layoutHelper'
-import PtnaLogo from '../components/PtnaLogo.vue'
-import PageIndicator from '../components/PageIndicator.vue'
-import MusicalDecorations from '../components/MusicalDecorations.vue'
+import { computed } from "vue";
+import { handleBackground } from "../layoutHelper";
+import PtnaLogo from "../components/PtnaLogo.vue";
+import PageIndicator from "../components/PageIndicator.vue";
+import MusicalDecorations from "../components/MusicalDecorations.vue";
 
 const props = defineProps({
   background: {
-    default: '',
+    default: "",
   },
-})
+});
 
-const style = computed(() => handleBackground(props.background))
+const style = computed(() => handleBackground(props.background));
 </script>
 
 <template>
@@ -21,18 +21,18 @@ const style = computed(() => handleBackground(props.background))
       <div class="col-left">
         <slot name="left" />
       </div>
-      
+
       <div class="col-right">
         <slot name="right" />
       </div>
-      
+
       <!-- Vertical divider with musical theme -->
       <div class="absolute left-1/2 top-0 bottom-0 transform -translate-x-1/2">
         <div class="w-0.5 bg-ptna-primary opacity-20 h-full"></div>
         <MusicalDecorations variant="divider" :opacity="0.3" />
       </div>
     </div>
-    
+
     <PageIndicator />
   </div>
 </template>

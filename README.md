@@ -13,33 +13,43 @@
 ## レイアウト一覧
 
 ### `cover`
+
 カバーページ用レイアウト。背景画像やグラデーションに対応し、音楽的な装飾要素を含みます。
 
-### `default`  
+### `default`
+
 標準的なコンテンツページ用レイアウト。ページ番号表示機能付き。
 
 ### `section`
+
 セクション区切り用レイアウト。大きなタイトルと装飾的な音楽要素でインパクトを演出。
 
 ### `intro`
+
 導入ページ用レイアウト。下部にピアノ鍵盤パターンの装飾。
 
 ### `fact`
+
 重要な数値や事実を強調表示するレイアウト。アニメーション付き音符装飾。
 
 ### `quote`
+
 引用文表示用レイアウト。五線譜と引用符を組み合わせた装飾。
 
 ### `statement`
+
 重要な宣言や声明用レイアウト。エレガントな枠線と角の音符装飾。
 
 ### `two-cols`
+
 2カラムレイアウト。中央の縦線に音符装飾付き。
 
 ### `center`
+
 中央配置レイアウト。背景に控えめな音符パターン。
 
 ### `table-of-contents`
+
 目次レイアウト。各項目の左に黒丸白字の連番バッジを自動表示し、マルチカラムにも対応します。
 
 ## 使用方法
@@ -79,17 +89,18 @@ background: https://example.com/image.jpg
 ---
 
 # タイトル
+
 ## サブタイトル
 
 ---
-layout: section
----
+
+## layout: section
 
 # セクションタイトル
 
 ---
-layout: default
----
+
+## layout: default
 
 # 通常のコンテンツ
 
@@ -104,12 +115,12 @@ layout: default
 
 ```css
 :root {
-  --ptna-primary: #770000;        /* メインカラー */
-  --ptna-primary-light: #aa0000;  /* ライトカラー */
-  --ptna-primary-dark: #550000;   /* ダークカラー */
-  --ptna-secondary: #ffffff;      /* セカンダリカラー */
-  --ptna-accent: #000000;         /* アクセントカラー */
-  --ptna-gray: #666666;           /* グレー */
+  --ptna-primary: #770000; /* メインカラー */
+  --ptna-primary-light: #aa0000; /* ライトカラー */
+  --ptna-primary-dark: #550000; /* ダークカラー */
+  --ptna-secondary: #ffffff; /* セカンダリカラー */
+  --ptna-accent: #000000; /* アクセントカラー */
+  --ptna-gray: #666666; /* グレー */
 }
 ```
 
@@ -121,9 +132,9 @@ layout: default
 ---
 theme: ptna
 fonts:
-  sans: 'Hiragino Kaku Gothic ProN, Yu Gothic UI, sans-serif'
-  serif: 'Hiragino Mincho ProN, Yu Mincho, serif'
-  mono: 'Fira Code, monospace'
+  sans: "Hiragino Kaku Gothic ProN, Yu Gothic UI, sans-serif"
+  serif: "Hiragino Mincho ProN, Yu Mincho, serif"
+  mono: "Fira Code, monospace"
 ---
 ```
 
@@ -151,9 +162,9 @@ layout: table-of-contents
 
 ```html
 <style>
-.slidev-layout.table-of-contents :deep(.ptna-toc-list[style*="column"]) {
-  column-gap: 6rem; /* Safari 対応なら -webkit-column-gap も */
-}
+  .slidev-layout.table-of-contents :deep(.ptna-toc-list[style*="column"]) {
+    column-gap: 6rem; /* Safari 対応なら -webkit-column-gap も */
+  }
 </style>
 ```
 
@@ -161,9 +172,9 @@ layout: table-of-contents
 
 ```html
 <style>
-.slidev-layout.table-of-contents :deep(.ptna-toc-list > li::before) {
-  display: none;
-}
+  .slidev-layout.table-of-contents :deep(.ptna-toc-list > li::before) {
+    display: none;
+  }
 </style>
 ```
 
@@ -175,7 +186,9 @@ layout: table-of-contents
 ---
 
 ::title::
+
 # この発表の流れ
+
 ::
 
 任意の説明文をここに入れられます。

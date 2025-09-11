@@ -1,16 +1,16 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-import { handleBackground } from '../layoutHelper'
-import PtnaLogo from '../components/PtnaLogo.vue'
-import MusicalDecorations from '../components/MusicalDecorations.vue'
+import { computed } from "vue";
+import { handleBackground } from "../layoutHelper";
+import PtnaLogo from "../components/PtnaLogo.vue";
+import MusicalDecorations from "../components/MusicalDecorations.vue";
 
 const props = defineProps({
   background: {
-    default: '',
+    default: "",
   },
-})
+});
 
-const style = computed(() => handleBackground(props.background))
+const style = computed(() => handleBackground(props.background));
 </script>
 
 <template>
@@ -19,7 +19,7 @@ const style = computed(() => handleBackground(props.background))
     <div class="relative z-10">
       <slot />
     </div>
-    
+
     <MusicalDecorations variant="section" :opacity="0.05" />
   </div>
 </template>

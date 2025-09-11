@@ -9,6 +9,9 @@
     "type": "git",
     "url": "https://github.com/HosakaKeigo/slidev-theme-ptna"
   },
+  "scripts": {
+    "format": "prettier --write ."
+  },
   "keywords": [
     "slidev-theme",
     "slidev",
@@ -16,7 +19,7 @@
     "piano"
   ],
   "engines": {
-    "node": ">=14.0.0",
+    "node": ">=20.0.0",
     "slidev": ">=v0.47.0"
   },
   "slidev": {
@@ -41,6 +44,8 @@
     "vue": "^3.5.21"
   },
   "devDependencies": {
-    "@slidev/cli": "^52.1.0"
+    "@slidev/cli": "^52.1.0",
+    "prettier": "^3.6.2",
+    "prettier-plugin-slidev": "^1.0.5"
   }
 }
