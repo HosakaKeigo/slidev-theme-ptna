@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import { handleBackground } from '../layoutHelper'
 import PtnaLogo from '../components/PtnaLogo.vue'
 
@@ -9,7 +9,7 @@ const props = defineProps({
   },
   columns: {
     type: [String, Number],
-    default: 1,
+    default: 'auto',
   },
   listClass: {
     type: [String, Array],
@@ -31,6 +31,32 @@ const props = defineProps({
 })
 
 const style = computed(() => handleBackground(props.background))
+const tocItemCount = ref(0)
+
+// 実際のカラム数を計算（10項目以上なら2列、それ以外は指定された列数または1列）
+const actualColumns = computed(() => {
+  // 明示的に数値が指定されていて 'auto' でない場合はそれを使用
+  if (props.columns !== 'auto' && typeof props.columns === 'number') {
+    return props.columns
+  }
+  if (props.columns !== 'auto' && typeof props.columns === 'string' && !isNaN(Number(props.columns))) {
+    return Number(props.columns)
+  }
+  
+  // 'auto' または計算できない場合は項目数に基づいて決定
+  return tocItemCount.value >= 10 ? 2 : 1
+})
+
+// ToC項目数をカウント（マウント後に実行）
+onMounted(() => {
+  setTimeout(() => {
+    const tocList = document.querySelector('.ptna-toc-list')
+    if (tocList) {
+      // 直接の子li要素のみをカウント（ネストした項目は除外）
+      tocItemCount.value = tocList.querySelectorAll(':scope > li').length
+    }
+  }, 100)
+})
 </script>
 
 <template>
@@ -54,7 +80,7 @@ const style = computed(() => handleBackground(props.background))
       <div class="flex-1 flex items-center justify-center">
         <div class="w-full max-w-4xl">
           <Toc
-            :columns="columns"
+            :columns="actualColumns"
             :listClass="['ptna-toc-list', listClass].flat().filter(Boolean)"
             :maxDepth="maxDepth"
             :minDepth="minDepth"
