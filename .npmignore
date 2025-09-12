@@ -1,0 +1,12 @@
+node_modules/
+.DS_Store
+.vscode/
+.idea/
+*.log
+.cache/
+.output/
+.nuxt/
+dist/
+example.md
+slides.md
+.git/

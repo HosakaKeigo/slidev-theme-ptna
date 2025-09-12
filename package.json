@@ -1,5 +1,5 @@
 {
-  "name": "@slidev/theme-ptna",
+  "name": "slidev-theme-ptna",
   "version": "0.1.0",
   "description": "PTNA (全日本ピアノ指導者協会) theme for Slidev",
   "author": "Hosaka Keigo <hosaka@piano.or.jp>",
@@ -7,7 +7,7 @@
   "homepage": "https://www.piano.or.jp",
   "repository": {
     "type": "git",
-    "url": "https://github.com/HosakaKeigo/slidev-theme-ptna"
+    "url": "git+https://github.com/HosakaKeigo/slidev-theme-ptna.git"
   },
   "scripts": {
     "format": "prettier --write ."
