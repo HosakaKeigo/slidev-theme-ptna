@@ -71,12 +71,28 @@
   @apply mb-4 pl-6;
 }
 
-.slidev-layout li {
+.slidev-layout ul {
+  list-style: none;
+}
+
+.slidev-layout ul li {
+  @apply mb-2;
+  color: var(--ptna-text-primary);
+  list-style-position: inside;
+}
+
+.slidev-layout ul li::marker {
+  content: "♪ ";
+  color: var(--ptna-primary);
+  font-size: 1.2em;
+}
+
+.slidev-layout ol li {
   @apply mb-2;
   color: var(--ptna-text-primary);
 }
 
-.slidev-layout li::marker {
+.slidev-layout ol li::marker {
   color: var(--ptna-primary);
 }
 
@@ -273,6 +289,31 @@
   @apply h-full grid place-content-center;
   text-align: center;
   padding: 2rem;
+}
+
+/* text-centerクラス以下のul用スタイル */
+.text-center ul {
+  text-align: center;
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.text-center ul li {
+  list-style-position: inside;
+  margin-bottom: 0.5rem;
+  color: var(--ptna-text-primary);
+  padding-left: 0; /* 通常のリストのパディングをリセット */
+}
+
+.text-center ul li::before {
+  display: none; /* 通常のリストの::before疑似要素を無効化 */
+}
+
+.text-center ul li::marker {
+  content: "♪ ";
+  color: var(--ptna-primary);
+  font-size: 1.2em;
 }
 
 /* コードブロック */
