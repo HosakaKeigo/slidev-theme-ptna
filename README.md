@@ -267,25 +267,3 @@ npm run build
 ```bash
 npm run preview
 ```
-
-## ライセンス
-
-MIT License
-
-## 著者
-
-- **開発者**: 保坂恵吾 (Hosaka Keigo)
-- **メール**: hosaka@piano.or.jp
-- **組織**: 全日本ピアノ指導者協会
-
-## 貢献
-
-プルリクエストやissueの報告を歓迎します。
-
-不具合やご要望（例: 目次のスタイル微調整、Mermaidの見た目最適化など）があれば、Issueにてお知らせください。
-
-## 関連リンク
-
-- [全日本ピアノ指導者協会 公式サイト](https://www.piano.or.jp)
-- [Slidev 公式サイト](https://sli.dev)
-- [GitHub リポジトリ](https://github.com/HosakaKeigo/slidev-theme-ptna)
