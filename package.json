@@ -1,6 +1,6 @@
 {
   "name": "slidev-theme-ptna",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "PTNA (全日本ピアノ指導者協会) theme for Slidev",
   "author": "Hosaka Keigo <hosaka@piano.or.jp>",
   "license": "MIT",
@@ -47,5 +47,13 @@
     "@slidev/cli": "^52.1.0",
     "prettier": "^3.6.2",
     "prettier-plugin-slidev": "^1.0.5"
-  }
+  },
+  "files": [
+    "components",
+    "layouts",
+    "assets",
+    "styles.css",
+    "layoutHelper.ts",
+    "index.ts"
+  ]
 }

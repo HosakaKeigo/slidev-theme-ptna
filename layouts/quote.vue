@@ -18,6 +18,7 @@ Quote Layout - 引用文表示用レイアウト
 import { computed } from "vue";
 import { handleBackground } from "../layoutHelper";
 import PtnaLogo from "../components/PtnaLogo.vue";
+import ptnyanQuoteUrl from '../assets/ptnyan/quote.png'
 
 const props = defineProps({
   background: {
@@ -65,7 +66,7 @@ const style = computed(() => handleBackground(props.background));
 
     <!-- Ptnyan quote character -->
     <div class="absolute bottom-16 right-16 opacity-70 pointer-events-none">
-      <img src="/ptnyan/quote.png" alt="Ptnyan with book" class="h-48 w-auto" />
+      <img :src="ptnyanQuoteUrl" alt="Ptnyan with book" class="h-48 w-auto" />
     </div>
   </div>
 </template>

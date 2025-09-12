@@ -19,6 +19,7 @@ import { computed } from "vue";
 import { handleBackground } from "../layoutHelper";
 import PtnaLogo from "../components/PtnaLogo.vue";
 import MusicalDecorations from "../components/MusicalDecorations.vue";
+import ptnyanFrontUrl from '../assets/ptnyan/ptnyan-front.png'
 
 const props = defineProps({
   background: {
@@ -44,7 +45,7 @@ const style = computed(() => handleBackground(props.background));
 
     <!-- Ptnyan character -->
     <div class="absolute bottom-12 right-12 opacity-60 pointer-events-none">
-      <img src="/ptnyan/ptnyan-front.png" alt="Ptnyan" class="h-32 w-auto" />
+      <img :src="ptnyanFrontUrl" alt="Ptnyan" class="h-32 w-auto" />
     </div>
   </div>
 </template>

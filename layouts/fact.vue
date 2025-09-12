@@ -19,6 +19,7 @@ import { computed } from "vue";
 import { handleBackground } from "../layoutHelper";
 import PtnaLogo from "../components/PtnaLogo.vue";
 import MusicalDecorations from "../components/MusicalDecorations.vue";
+import ptnyanFactUrl from '../assets/ptnyan/ptnyan-fact.png'
 
 const props = defineProps({
   background: {
@@ -40,7 +41,7 @@ const style = computed(() => handleBackground(props.background));
       <!-- Ptnyan fact character positioned just above the fact -->
       <div class="mt-8">
         <img
-          src="/ptnyan/ptnyan-fact.png"
+          :src="ptnyanFactUrl"
           alt="Ptnyan fact"
           class="h-64 w-auto opacity-80"
         />

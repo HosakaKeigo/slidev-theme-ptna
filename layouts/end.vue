@@ -19,6 +19,7 @@ import { computed } from "vue";
 import { handleBackground } from "../layoutHelper";
 import PtnaLogo from "../components/PtnaLogo.vue";
 import MusicalDecorations from "../components/MusicalDecorations.vue";
+import ptnyanThanksUrl from '../assets/ptnyan/ptnyan-thanks.png'
 
 const props = defineProps({
   background: {
@@ -43,7 +44,7 @@ const style = computed(() => handleBackground(props.background));
         <!-- Ptnyan thanks character -->
         <div class="flex justify-center mb-8">
           <img
-            src="/ptnyan/ptnyan-thanks.png"
+            :src="ptnyanThanksUrl"
             alt="Ptnyan thanks"
             class="h-64 w-auto"
           />

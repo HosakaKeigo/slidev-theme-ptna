@@ -19,6 +19,7 @@ import { computed } from "vue";
 import { handleBackground } from "../layoutHelper";
 import PtnaLogo from "../components/PtnaLogo.vue";
 import MusicalDecorations from "../components/MusicalDecorations.vue";
+import ptnyanPianoUrl from '../assets/ptnyan/ptnyan-play-piano.png'
 
 const props = defineProps({
   background: {
@@ -36,7 +37,7 @@ const style = computed(() => handleBackground(props.background));
     <!-- Ptnyan play piano character -->
     <div class="absolute bottom-8 right-8 z-10">
       <img 
-        src="/ptnyan/ptnyan-play-piano.png" 
+        :src="ptnyanPianoUrl" 
         alt="Ptnyan playing piano" 
         class="h-96 w-auto opacity-80"
       />
