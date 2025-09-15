@@ -199,6 +199,79 @@ layout: table-of-contents
 - カラム切り替わり時の見切れを抑制するため、リスト項目は分割されにくいスタイルになっています。
 - ネストされた見出しは左ラインのみのシンプル表示（トップレベルに連番）。
 
+## ECharts チャートコンポーネント
+
+本テーマには、データ可視化のための ECharts 統合機能が含まれています。5種類の主要なチャートコンポーネントを利用できます。
+
+### 利用可能なチャート
+
+- **BarChart**: 棒グラフ（縦棒・横棒）
+- **LineChart**: 折れ線グラフ（エリアチャート対応）
+- **PieChart**: 円グラフ（ドーナツチャート、ローズチャート対応）
+- **ScatterChart**: 散布図
+- **RadarChart**: レーダーチャート
+
+### 基本的な使い方
+
+```vue
+<script setup>
+import { BarChart, LineChart, PieChart, ScatterChart, RadarChart } from 'slidev-theme-ptna/components/charts';
+</script>
+
+<div class="h-80">
+  <BarChart
+    title="年間売上"
+    :labels="['2022年', '2023年', '2024年']"
+    :series="[
+      { name: '製品A', data: [120, 200, 150] },
+      { name: '製品B', data: [80, 90, 110] }
+    ]"
+    x-axis-name="年度"
+    y-axis-name="売上（百万円）"
+  />
+</div>
+```
+
+### チャートの高さ設定
+
+チャートはコンテナの高さに自動的に適応します。Tailwind CSS のクラスを使用して高さを設定してください：
+
+- `h-64`: 256px
+- `h-80`: 320px  
+- `h-96`: 384px
+
+### アニメーション対応
+
+Slidev の v-click ディレクティブと組み合わせて、動的なデータ更新が可能です：
+
+```vue
+<div class="h-80" v-click>
+  <LineChart
+    title="動的データ"
+    :labels="['Jan', 'Feb', 'Mar']"
+    :series="[{ 
+      name: 'データ', 
+      data: $slidev.nav.clicks > 0 ? [100, 150, 200] : [50, 60, 70]
+    }]"
+  />
+</div>
+```
+
+### 複数チャートの配置
+
+グリッドレイアウトを使用して複数のチャートを配置できます：
+
+```vue
+<div class="grid grid-cols-2 gap-4">
+  <div class="h-64">
+    <BarChart ... />
+  </div>
+  <div class="h-64">
+    <PieChart ... />
+  </div>
+</div>
+```
+
 ## Mermaid 図表の利用
 
 本テーマは Slidev の Mermaid 対応を前提にそのまま利用できます。コードブロックに `mermaid` を指定してください。

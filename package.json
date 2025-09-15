@@ -41,7 +41,9 @@
   "dependencies": {
     "@slidev/types": "^0.47.0",
     "codemirror-theme-vars": "^0.1.2",
-    "vue": "^3.5.21"
+    "echarts": "^5.6.0",
+    "vue": "^3.5.21",
+    "vue-echarts": "^7.0.3"
   },
   "devDependencies": {
     "@slidev/cli": "^52.1.0",
@@ -53,6 +55,7 @@
     "layouts",
     "assets",
     "styles",
+    "setup",
     "layoutHelper.ts",
     "index.ts"
   ]
