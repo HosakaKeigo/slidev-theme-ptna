@@ -3,4 +3,7 @@ export { default as LineChart } from './LineChart.vue';
 export { default as PieChart } from './PieChart.vue';
 export { default as ScatterChart } from './ScatterChart.vue';
 export { default as RadarChart } from './RadarChart.vue';
+export { default as FunnelChart } from './FunnelChart.vue';
+export { default as WaterfallChart } from './WaterfallChart.vue';
+export { default as RaceChart } from './RaceChart.vue';
 export { default as BaseChart } from './BaseChart.vue';

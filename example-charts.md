@@ -167,6 +167,51 @@ Slidevプレゼンテーションにおける動的チャートの表示
 
 ---
 
+# Funnel Chart - ファネルチャート
+
+コンバージョン率や段階的プロセスの可視化
+
+<div class="h-80">
+  <FunnelChart
+    :key="$slidev.nav.currentPage"
+    title="コンバージョンファネル"
+    :data="[
+      { value: 100, name: '訪問' },
+      { value: 80, name: 'クリック' },
+      { value: 60, name: '閲覧' },
+      { value: 40, name: '問い合わせ' },
+      { value: 20, name: '購入' }
+    ]"
+    sort="descending"
+  />
+</div>
+
+---
+
+# Waterfall Chart - ウォーターフォールチャート
+
+累積変化の可視化
+
+<div class="h-80">
+  <WaterfallChart
+    :key="$slidev.nav.currentPage"
+    title="月次収支の推移"
+    :data="[
+      { name: '期初残高', value: 1000, type: 'total' },
+      { name: '売上1', value: 450 },
+      { name: '売上2', value: 380 },
+      { name: '経費1', value: -220, type: 'expense' },
+      { name: '売上3', value: 300 },
+      { name: '経費2', value: -180, type: 'expense' },
+      { name: '売上4', value: 250 },
+      { name: '経費3', value: -150, type: 'expense' }
+    ]"
+    :show-total="true"
+  />
+</div>
+
+---
+
 # アニメーション付きチャート
 
 クリックでデータを更新
@@ -187,6 +232,111 @@ Slidevプレゼンテーションにおける動的チャートの表示
 </div>
 
 ---
+
+# Race Chart - レースチャート
+
+動的ランキングの可視化
+
+<div class="h-96">
+  <RaceChart
+    :key="$slidev.nav.currentPage"
+    title="売上ランキングの推移"
+    :data="[
+      { 
+        name: '製品A', 
+        values: [
+          { period: '2021年', value: 120 },
+          { period: '2022年', value: 200 },
+          { period: '2023年', value: 150 },
+          { period: '2024年', value: 180 }
+        ],
+        color: '#5470c6'
+      },
+      { 
+        name: '製品B', 
+        values: [
+          { period: '2021年', value: 80 },
+          { period: '2022年', value: 90 },
+          { period: '2023年', value: 110 },
+          { period: '2024年', value: 140 }
+        ],
+        color: '#91cc75'
+      },
+      { 
+        name: '製品C', 
+        values: [
+          { period: '2021年', value: 60 },
+          { period: '2022年', value: 70 },
+          { period: '2023年', value: 85 },
+          { period: '2024年', value: 195 }
+        ],
+        color: '#fac858'
+      },
+      { 
+        name: '製品D', 
+        values: [
+          { period: '2021年', value: 90 },
+          { period: '2022年', value: 100 },
+          { period: '2023年', value: 120 },
+          { period: '2024年', value: 150 }
+        ],
+        color: '#ee6666'
+      },
+      { 
+        name: '製品E', 
+        values: [
+          { period: '2021年', value: 50 },
+          { period: '2022年', value: 180 },
+          { period: '2023年', value: 160 },
+          { period: '2024年', value: 170 }
+        ],
+        color: '#73c0de'
+      }
+    ]"
+    unit="百万円"
+    :max-bars="5"
+    :update-frequency="1500"
+    :auto-play="true"
+  />
+</div>
+
+---
+
+# カスタムチャート - BaseChart直接利用
+
+任意のEChartsオプションを直接指定
+
+<div class="h-80">
+  <BaseChart
+    :key="$slidev.nav.currentPage"
+    :option="{
+      title: { text: 'カスタム3Dパイチャート', left: 'center' },
+      tooltip: { trigger: 'item' },
+      series: [{
+        type: 'pie',
+        radius: ['40%', '70%'],
+        roseType: 'area',
+        itemStyle: {
+          borderRadius: 8,
+          borderColor: '#fff',
+          borderWidth: 2
+        },
+        data: [
+          { value: 40, name: 'rose 1' },
+          { value: 38, name: 'rose 2' },
+          { value: 32, name: 'rose 3' },
+          { value: 30, name: 'rose 4' },
+          { value: 28, name: 'rose 5' },
+          { value: 26, name: 'rose 6' },
+          { value: 22, name: 'rose 7' },
+          { value: 18, name: 'rose 8' }
+        ]
+      }]
+    }"
+  />
+</div>
+
+---
 layout: center
 ---
 
@@ -195,5 +345,5 @@ layout: center
 高機能でインタラクティブなチャートが利用可能になりました
 
 <script setup>
-import { BarChart, LineChart, PieChart, ScatterChart, RadarChart } from './components/charts';
+import { BarChart, LineChart, PieChart, ScatterChart, RadarChart, FunnelChart, WaterfallChart, RaceChart, BaseChart } from './components/charts';
 </script>

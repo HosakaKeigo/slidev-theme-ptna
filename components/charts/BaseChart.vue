@@ -8,6 +8,7 @@ import {
   PieChart,
   ScatterChart,
   RadarChart,
+  FunnelChart,
 } from 'echarts/charts';
 import {
   TitleComponent,
@@ -28,6 +29,7 @@ use([
   PieChart,
   ScatterChart,
   RadarChart,
+  FunnelChart,
   TitleComponent,
   TooltipComponent,
   LegendComponent,

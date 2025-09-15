@@ -201,7 +201,7 @@ layout: table-of-contents
 
 ## ECharts チャートコンポーネント
 
-本テーマには、データ可視化のための ECharts 統合機能が含まれています。5種類の主要なチャートコンポーネントを利用できます。
+本テーマには、データ可視化のための ECharts 統合機能が含まれています。8種類の主要なチャートコンポーネントを利用できます。
 
 ### 利用可能なチャート
 
@@ -210,16 +210,20 @@ layout: table-of-contents
 - **PieChart**: 円グラフ（ドーナツチャート、ローズチャート対応）
 - **ScatterChart**: 散布図
 - **RadarChart**: レーダーチャート
+- **FunnelChart**: ファネルチャート（コンバージョン分析）
+- **WaterfallChart**: ウォーターフォールチャート（累積変化分析）
+- **RaceChart**: レースチャート（動的ランキング）
 
 ### 基本的な使い方
 
 ```vue
 <script setup>
-import { BarChart, LineChart, PieChart, ScatterChart, RadarChart } from 'slidev-theme-ptna/components/charts';
+import { BarChart, LineChart, PieChart, ScatterChart, RadarChart, FunnelChart, WaterfallChart, RaceChart } from 'slidev-theme-ptna/components/charts';
 </script>
 
 <div class="h-80">
   <BarChart
+    :key="$slidev.nav.currentPage"
     title="年間売上"
     :labels="['2022年', '2023年', '2024年']"
     :series="[
@@ -232,6 +236,189 @@ import { BarChart, LineChart, PieChart, ScatterChart, RadarChart } from 'slidev-
 </div>
 ```
 
+**重要**: スライド切り替え時にアニメーションを再生するには、`:key="$slidev.nav.currentPage"`を追加してください。
+
+### 各チャートの詳細な使い方
+
+#### BarChart（棒グラフ）
+
+```vue
+<BarChart
+  :key="$slidev.nav.currentPage"
+  title="タイトル"
+  :labels="['ラベル1', 'ラベル2', 'ラベル3']"
+  :series="[
+    { name: 'シリーズ1', data: [100, 120, 90] },
+    { name: 'シリーズ2', data: [80, 100, 110], stack: 'グループ1' }, // stack で積み上げ
+  ]"
+  x-axis-name="X軸ラベル"
+  y-axis-name="Y軸ラベル"
+  :horizontal="false"  // true で横棒グラフ
+/>
+```
+
+#### LineChart（折れ線グラフ）
+
+```vue
+<LineChart
+  :key="$slidev.nav.currentPage"
+  title="月次推移"
+  :labels="['1月', '2月', '3月', '4月', '5月', '6月']"
+  :series="[
+    { 
+      name: 'データ1', 
+      data: [120, 132, 101, 134, 90, 230],
+      smooth: true,  // 曲線にする
+      areaStyle: {}  // エリアチャートにする
+    },
+    { 
+      name: 'データ2', 
+      data: [220, 182, 191, 234, 290, 330],
+      smooth: false
+    }
+  ]"
+/>
+```
+
+#### PieChart（円グラフ）
+
+```vue
+<PieChart
+  :key="$slidev.nav.currentPage"
+  title="割合表示"
+  :data="[
+    { value: 335, name: 'カテゴリA' },
+    { value: 310, name: 'カテゴリB' },
+    { value: 234, name: 'カテゴリC' },
+    { value: 135, name: 'カテゴリD' }
+  ]"
+  :show-legend="true"  // 凡例の表示/非表示
+  :radius="'60%'"      // 半径（文字列または配列）
+  :rose-type="false"   // 'radius' | 'area' | false でローズチャート
+/>
+```
+
+#### ScatterChart（散布図）
+
+```vue
+<ScatterChart
+  :key="$slidev.nav.currentPage"
+  title="相関分析"
+  :series="[
+    {
+      name: 'グループA',
+      data: [[10, 8.04], [8, 6.95], [13, 7.58], [9, 8.81]], // [x, y]の配列
+      symbolSize: 20  // 点のサイズ
+    },
+    {
+      name: 'グループB',
+      data: [[10, 9.14], [8, 8.14], [13, 8.74], [9, 8.77]],
+      symbolSize: 15
+    }
+  ]"
+  x-axis-name="X軸（独立変数）"
+  y-axis-name="Y軸（従属変数）"
+/>
+```
+
+#### RadarChart（レーダーチャート）
+
+```vue
+<RadarChart
+  :key="$slidev.nav.currentPage"
+  title="総合評価"
+  :indicators="[
+    { name: '指標1', max: 100 },
+    { name: '指標2', max: 100 },
+    { name: '指標3', max: 100 },
+    { name: '指標4', max: 100 },
+    { name: '指標5', max: 100 }
+  ]"
+  :data="[
+    { 
+      name: '現在', 
+      value: [80, 90, 70, 85, 75],
+      areaStyle: { opacity: 0.5 }  // 塗りつぶし
+    },
+    { 
+      name: '目標', 
+      value: [90, 95, 85, 90, 85],
+      areaStyle: { opacity: 0.3 }
+    }
+  ]"
+  :shape="'polygon'"  // 'polygon' | 'circle'
+/>
+```
+
+#### FunnelChart（ファネルチャート）
+
+```vue
+<FunnelChart
+  :key="$slidev.nav.currentPage"
+  title="コンバージョンファネル"
+  :data="[
+    { value: 100, name: '訪問' },
+    { value: 80, name: 'クリック' },
+    { value: 60, name: '閲覧' },
+    { value: 40, name: '問い合わせ' },
+    { value: 20, name: '購入' }
+  ]"
+  :sort="'descending'"     // 'ascending' | 'descending' | 'none'
+  :align="'center'"        // 'left' | 'center' | 'right'
+  :gap="2"                 // 各段の間隔
+  :min-size="'0%'"         // 最小サイズ
+  :max-size="'100%'"       // 最大サイズ
+  :show-legend="true"      // 凡例の表示/非表示
+/>
+```
+
+#### WaterfallChart（ウォーターフォールチャート）
+
+```vue
+<WaterfallChart
+  :key="$slidev.nav.currentPage"
+  title="月次収支の推移"
+  :data="[
+    { name: '期初残高', value: 1000, type: 'total' },
+    { name: '売上1', value: 450 },
+    { name: '売上2', value: 380 },
+    { name: '経費1', value: -220, type: 'expense' },  // 負の値またはtype: 'expense'
+    { name: '売上3', value: 300 },
+    { name: '経費2', value: -180, type: 'expense' },
+    { name: '売上4', value: 250 },
+  ]"
+  :show-total="true"        // 最終合計の表示/非表示
+  :positive-color="'#5cb85c'"  // プラス値の色
+  :negative-color="'#d9534f'"  // マイナス値の色
+/>
+```
+
+#### RaceChart（レースチャート）
+
+```vue
+<RaceChart
+  :key="$slidev.nav.currentPage"
+  title="売上ランキングの推移"
+  :data="[
+    { 
+      name: '製品A', 
+      values: [
+        { period: '2021年', value: 120 },
+        { period: '2022年', value: 200 },
+        { period: '2023年', value: 150 },
+        { period: '2024年', value: 180 }
+      ],
+      color: '#5470c6'  // オプション：バーの色
+    },
+    // ... 他の製品データ
+  ]"
+  unit="百万円"           // 単位表示
+  :max-bars="10"         // 最大表示バー数
+  :update-frequency="1500"  // アニメーション速度（ミリ秒）
+  :auto-play="true"      // 自動再生
+/>
+```
+
 ### チャートの高さ設定
 
 チャートはコンテナの高さに自動的に適応します。Tailwind CSS のクラスを使用して高さを設定してください：
@@ -239,19 +426,36 @@ import { BarChart, LineChart, PieChart, ScatterChart, RadarChart } from 'slidev-
 - `h-64`: 256px
 - `h-80`: 320px  
 - `h-96`: 384px
+- `h-full`: 親要素の100%
 
-### アニメーション対応
+### アニメーション効果
 
-Slidev の v-click ディレクティブと組み合わせて、動的なデータ更新が可能です：
+各チャートには異なるアニメーション効果が設定されています：
+
+- **BarChart**: `elasticOut` - 弾むような効果
+- **LineChart**: `linear` - 滑らかな描画
+- **PieChart**: `scale` - 拡大アニメーション
+- **ScatterChart**: `backOut` - 跳ねるような効果
+- **RadarChart**: `sinusoidalInOut` - 波のような動き
+- **FunnelChart**: `expansion` - 拡張アニメーション
+- **WaterfallChart**: `cubicOut` - キュービックアウト効果
+- **RaceChart**: `linear` - スムーズな動的ランキングアニメーション
+
+### 動的データ更新
+
+Slidev の機能と組み合わせて、インタラクティブなチャートを作成できます：
 
 ```vue
 <div class="h-80" v-click>
   <LineChart
-    title="動的データ"
-    :labels="['Jan', 'Feb', 'Mar']"
+    :key="$slidev.nav.currentPage"
+    title="クリックで更新"
+    :labels="['Jan', 'Feb', 'Mar', 'Apr', 'May']"
     :series="[{ 
       name: 'データ', 
-      data: $slidev.nav.clicks > 0 ? [100, 150, 200] : [50, 60, 70]
+      data: $slidev.nav.clicks > 0 ? [100, 180, 140, 200, 160] : [50, 60, 55, 70, 65],
+      smooth: true,
+      areaStyle: { opacity: 0.3 }
     }]"
   />
 </div>
@@ -264,13 +468,51 @@ Slidev の v-click ディレクティブと組み合わせて、動的なデー�
 ```vue
 <div class="grid grid-cols-2 gap-4">
   <div class="h-64">
-    <BarChart ... />
+    <BarChart 
+      :key="$slidev.nav.currentPage + '_bar'"
+      ... 
+    />
   </div>
   <div class="h-64">
-    <PieChart ... />
+    <PieChart 
+      :key="$slidev.nav.currentPage + '_pie'"
+      ... 
+    />
   </div>
 </div>
 ```
+
+### BaseChartで任意のEChartsオプションを使用
+
+提供されているチャートコンポーネント以外の複雑なチャートが必要な場合、`BaseChart`を直接使用して、任意のEChartsオプションを渡すことができます：
+
+```vue
+<script setup>
+import { BaseChart } from 'slidev-theme-ptna/components/charts';
+</script>
+
+<div class="h-80">
+  <BaseChart
+    :key="$slidev.nav.currentPage"
+    :option="{
+      // 任意のEChartsオプション
+      title: { text: 'カスタムチャート' },
+      series: [{
+        type: 'gauge',  // ゲージチャートなど
+        data: [{ value: 50, name: 'Progress' }]
+      }]
+    }"
+  />
+</div>
+```
+
+これにより、EChartsがサポートするすべてのチャートタイプ（ゲージ、ツリーマップ、サンキー図、グラフなど）を使用できます。
+
+### トラブルシューティング
+
+- **チャートが表示されない**: コンテナに高さを設定してください（例: `class="h-80"`）
+- **アニメーションが再生されない**: `:key="$slidev.nav.currentPage"`を追加してください
+- **複数チャートで同じアニメーション**: keyに識別子を追加（例: `:key="$slidev.nav.currentPage + '_chart1'"`）
 
 ## Mermaid 図表の利用
 
