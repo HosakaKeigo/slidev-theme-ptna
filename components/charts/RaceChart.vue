@@ -78,7 +78,7 @@ const itemColors = computed(() => {
 
 const option = computed<EChartsOption>(() => {
   const data = getCurrentPeriodData(currentPeriodIndex.value);
-  const currentPeriod = periods.value[currentPeriodIndex.value];
+  const currentPeriod = periods.value[currentPeriodIndex.value] || '';
   
   return {
     title: {
@@ -89,7 +89,7 @@ const option = computed<EChartsOption>(() => {
       top: props.title ? 80 : 40,
       bottom: 30,
       left: 150,
-      right: 100,
+      right: 80,
     },
     xAxis: {
       type: 'value',
@@ -149,10 +149,10 @@ const option = computed<EChartsOption>(() => {
       elements: [
         {
           type: 'text',
-          right: 120,
-          bottom: 60,
+          right: 80,
+          bottom: 40,
           style: {
-            text: currentPeriod || '',
+            text: currentPeriod,
             font: 'bolder 60px monospace',
             fill: 'rgba(100, 100, 100, 0.25)',
           },
@@ -172,12 +172,9 @@ const startAnimation = () => {
       currentPeriodIndex.value++;
       timer.value = window.setTimeout(animate, props.updateFrequency);
     } else {
-      // Reset to beginning
-      currentPeriodIndex.value = 0;
+      // Animation complete - stop at the end
       isPlaying.value = false;
-      if (props.autoPlay) {
-        timer.value = window.setTimeout(() => startAnimation(), 2000);
-      }
+      // Don't auto-restart
     }
   };
   
@@ -203,6 +200,7 @@ const resetAnimation = () => {
 // Auto-start on mount if autoPlay is true
 onMounted(() => {
   if (props.autoPlay && periods.value.length > 0) {
+    currentPeriodIndex.value = 0;  // Start from beginning
     setTimeout(() => startAnimation(), 1000);
   }
 });
@@ -236,6 +234,9 @@ defineExpose({
       :height="height" 
       :width="width" 
     />
+    <div class="period-display">
+      {{ periods[currentPeriodIndex] || '' }}
+    </div>
     <div v-if="!autoPlay" class="controls">
       <button @click="startAnimation" :disabled="isPlaying">開始</button>
       <button @click="stopAnimation" :disabled="!isPlaying">停止</button>
@@ -249,6 +250,18 @@ defineExpose({
   position: relative;
   height: 100%;
   width: 100%;
+}
+
+.period-display {
+  position: absolute;
+  right: 40px;
+  bottom: 40px;
+  font-size: 48px;
+  font-weight: bold;
+  color: rgba(100, 100, 100, 0.4);
+  font-family: monospace;
+  z-index: 10;
+  pointer-events: none;
 }
 
 .controls {

@@ -201,7 +201,7 @@ layout: table-of-contents
 
 ## ECharts チャートコンポーネント
 
-本テーマには、データ可視化のための ECharts 統合機能が含まれています。8種類の主要なチャートコンポーネントを利用できます。
+本テーマには、データ可視化のための ECharts 統合機能が含まれています。8種類の主要なチャートコンポーネントと、カスタムチャート用のベースコンポーネントを利用できます。
 
 ### 利用可能なチャート
 
@@ -395,6 +395,8 @@ import { BarChart, LineChart, PieChart, ScatterChart, RadarChart, FunnelChart, W
 
 #### RaceChart（レースチャート）
 
+動的にランキングが変化するアニメーションチャート。時系列データの順位変動を視覚的に表現します。
+
 ```vue
 <RaceChart
   :key="$slidev.nav.currentPage"
@@ -410,6 +412,16 @@ import { BarChart, LineChart, PieChart, ScatterChart, RadarChart, FunnelChart, W
       ],
       color: '#5470c6'  // オプション：バーの色
     },
+    { 
+      name: '製品B', 
+      values: [
+        { period: '2021年', value: 80 },
+        { period: '2022年', value: 90 },
+        { period: '2023年', value: 110 },
+        { period: '2024年', value: 140 }
+      ],
+      color: '#91cc75'
+    }
     // ... 他の製品データ
   ]"
   unit="百万円"           // 単位表示
@@ -418,6 +430,12 @@ import { BarChart, LineChart, PieChart, ScatterChart, RadarChart, FunnelChart, W
   :auto-play="true"      // 自動再生
 />
 ```
+
+**特徴：**
+- 時系列データを自動的にアニメーション表示
+- 各期間での順位が動的に変化
+- 現在の期間を右下に大きく表示
+- 自動再生と手動コントロールの切り替え可能
 
 ### チャートの高さ設定
 
