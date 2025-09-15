@@ -201,7 +201,7 @@ layout: table-of-contents
 
 ## ECharts チャートコンポーネント
 
-本テーマには、データ可視化のための ECharts 統合機能が含まれています。8種類の主要なチャートコンポーネントと、カスタムチャート用のベースコンポーネントを利用できます。
+本テーマには、データ可視化のための ECharts 統合機能が含まれています。10種類の主要なチャートコンポーネントと、カスタムチャート用のベースコンポーネントを利用できます。
 
 ### 利用可能なチャート
 
@@ -213,12 +213,14 @@ layout: table-of-contents
 - **FunnelChart**: ファネルチャート（コンバージョン分析）
 - **WaterfallChart**: ウォーターフォールチャート（累積変化分析）
 - **RaceChart**: レースチャート（動的ランキング）
+- **SankeyChart**: サンキー図（フローの可視化）
+- **TreeChart**: ツリー図（階層構造の可視化）
 
 ### 基本的な使い方
 
 ```vue
 <script setup>
-import { BarChart, LineChart, PieChart, ScatterChart, RadarChart, FunnelChart, WaterfallChart, RaceChart } from 'slidev-theme-ptna/components/charts';
+import { BarChart, LineChart, PieChart, ScatterChart, RadarChart, FunnelChart, WaterfallChart, RaceChart, SankeyChart, TreeChart } from 'slidev-theme-ptna/components/charts';
 </script>
 
 <div class="h-80">
@@ -437,6 +439,84 @@ import { BarChart, LineChart, PieChart, ScatterChart, RadarChart, FunnelChart, W
 - 現在の期間を右下に大きく表示
 - 自動再生と手動コントロールの切り替え可能
 
+#### SankeyChart（サンキー図）
+
+ノード間のフローや関係性を視覚的に表現するチャート。エネルギーフロー、プロセスフロー、資金の流れなどの表現に適しています。
+
+```vue
+<SankeyChart
+  :key="$slidev.nav.currentPage"
+  title="エネルギーフロー"
+  :nodes="[
+    { name: '石炭' },
+    { name: '天然ガス' },
+    { name: '火力発電' },
+    { name: '産業' },
+    { name: '家庭' }
+  ]"
+  :links="[
+    { source: '石炭', target: '火力発電', value: 150 },
+    { source: '天然ガス', target: '火力発電', value: 120 },
+    { source: '火力発電', target: '産業', value: 130 },
+    { source: '火力発電', target: '家庭', value: 70 }
+  ]"
+  orient="horizontal"      // 'horizontal' | 'vertical'
+  :node-width="20"         // ノードの幅
+  :node-gap="8"            // ノード間の間隔
+  :node-align="'justify'"  // 'justify' | 'left' | 'right'
+  :show-labels="true"      // ラベルの表示/非表示
+/>
+```
+
+**特徴：**
+- ノード間の流量を幅で表現
+- グラデーション効果で流れを視覚化
+- ホバー時に詳細情報表示
+- カスタマイズ可能なレイアウト方向
+
+#### TreeChart（ツリー図）
+
+階層構造データを木構造で視覚的に表現するチャート。組織図、ファイル構造、分類体系などの表現に適しています。
+
+```vue
+<TreeChart
+  :key="$slidev.nav.currentPage"
+  title="組織構造"
+  :data="{
+    name: 'CEO',
+    children: [
+      {
+        name: 'CTO',
+        children: [
+          { name: '開発部', value: 10 },
+          { name: '研究部', value: 5 }
+        ]
+      },
+      {
+        name: 'CFO',
+        children: [
+          { name: '経理部', value: 8 },
+          { name: '財務部', value: 6 }
+        ]
+      }
+    ]
+  }"
+  orient="TB"              // 'LR' | 'RL' | 'TB' | 'BT' | 'radial'
+  layout="orthogonal"      // 'orthogonal' | 'radial'
+  edge-shape="polyline"    // 'polyline' | 'curve'
+  :symbol-size="7"         // ノードのサイズ
+  :expand-and-collapse="true"  // 展開/折りたたみ機能
+  :initial-tree-depth="2"  // 初期展開深度
+  emphasis="descendant"    // 'none' | 'self' | 'series' | 'ancestor' | 'descendant'
+/>
+```
+
+**特徴：**
+- インタラクティブな展開/折りたたみ機能
+- 多様なレイアウト方向（左右、上下、放射状）
+- カスタマイズ可能なエッジ形状
+- ホバー時の強調表示
+
 ### チャートの高さ設定
 
 チャートはコンテナの高さに自動的に適応します。Tailwind CSS のクラスを使用して高さを設定してください：
@@ -458,6 +538,8 @@ import { BarChart, LineChart, PieChart, ScatterChart, RadarChart, FunnelChart, W
 - **FunnelChart**: `expansion` - 拡張アニメーション
 - **WaterfallChart**: `cubicOut` - キュービックアウト効果
 - **RaceChart**: `linear` - スムーズな動的ランキングアニメーション
+- **SankeyChart**: `cubicOut` - 流れるようなアニメーション
+- **TreeChart**: `cubicOut` - 展開アニメーション
 
 ### 動的データ更新
 

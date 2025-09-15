@@ -6,4 +6,6 @@ export { default as RadarChart } from './RadarChart.vue';
 export { default as FunnelChart } from './FunnelChart.vue';
 export { default as WaterfallChart } from './WaterfallChart.vue';
 export { default as RaceChart } from './RaceChart.vue';
+export { default as SankeyChart } from './SankeyChart.vue';
+export { default as TreeChart } from './TreeChart.vue';
 export { default as BaseChart } from './BaseChart.vue';

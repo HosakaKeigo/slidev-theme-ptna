@@ -9,6 +9,8 @@ import {
   ScatterChart,
   RadarChart,
   FunnelChart,
+  SankeyChart,
+  TreeChart,
 } from 'echarts/charts';
 import {
   TitleComponent,
@@ -30,6 +32,8 @@ use([
   ScatterChart,
   RadarChart,
   FunnelChart,
+  SankeyChart,
+  TreeChart,
   TitleComponent,
   TooltipComponent,
   LegendComponent,

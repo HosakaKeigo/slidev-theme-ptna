@@ -302,6 +302,144 @@ Slidevプレゼンテーションにおける動的チャートの表示
 
 ---
 
+# Sankey Chart - サンキー図
+
+フローやプロセスの可視化
+
+<div class="h-80">
+  <SankeyChart
+    :key="$slidev.nav.currentPage"
+    title="エネルギーフロー"
+    :nodes="[
+      { name: '石炭' },
+      { name: '天然ガス' },
+      { name: '原子力' },
+      { name: '再生可能' },
+      { name: '火力発電' },
+      { name: '原子力発電' },
+      { name: '再生可能発電' },
+      { name: '産業' },
+      { name: '家庭' },
+      { name: '商業' },
+      { name: '輸送' }
+    ]"
+    :links="[
+      { source: '石炭', target: '火力発電', value: 150 },
+      { source: '天然ガス', target: '火力発電', value: 120 },
+      { source: '原子力', target: '原子力発電', value: 100 },
+      { source: '再生可能', target: '再生可能発電', value: 80 },
+      { source: '火力発電', target: '産業', value: 130 },
+      { source: '火力発電', target: '家庭', value: 70 },
+      { source: '火力発電', target: '商業', value: 40 },
+      { source: '火力発電', target: '輸送', value: 30 },
+      { source: '原子力発電', target: '産業', value: 40 },
+      { source: '原子力発電', target: '家庭', value: 30 },
+      { source: '原子力発電', target: '商業', value: 30 },
+      { source: '再生可能発電', target: '産業', value: 30 },
+      { source: '再生可能発電', target: '家庭', value: 30 },
+      { source: '再生可能発電', target: '商業', value: 20 }
+    ]"
+    orient="horizontal"
+    :node-width="20"
+    :node-gap="8"
+  />
+</div>
+
+---
+
+# Tree Chart - ツリー図
+
+階層構造データの可視化
+
+<div class="h-96">
+  <TreeChart
+    :key="$slidev.nav.currentPage"
+    title="ファイル構造"
+    :data="{
+      name: 'flare',
+      children: [
+        {
+          name: 'data',
+          children: [
+            {
+              name: 'converters',
+              children: [
+                { name: 'Converters', value: 721 },
+                { name: 'DelimitedTextConverter', value: 4294 }
+              ]
+            },
+            {
+              name: 'DataUtil',
+              value: 3322
+            }
+          ]
+        },
+        {
+          name: 'display',
+          children: [
+            { name: 'DirtySprite', value: 8833 },
+            { name: 'LineSprite', value: 1732 },
+            { name: 'RectSprite', value: 3623 }
+          ]
+        },
+        {
+          name: 'flex',
+          children: [{ name: 'FlareVis', value: 4116 }]
+        },
+        {
+          name: 'query',
+          children: [
+            { name: 'AggregateExpression', value: 1616 },
+            { name: 'And', value: 1027 },
+            { name: 'Arithmetic', value: 3891 },
+            { name: 'Average', value: 891 },
+            { name: 'BinaryExpression', value: 2893 },
+            { name: 'Comparison', value: 5103 },
+            { name: 'CompositeExpression', value: 3677 },
+            { name: 'Count', value: 781 },
+            { name: 'DateUtil', value: 4141 },
+            { name: 'Distinct', value: 933 },
+            {
+              name: 'methods',
+              children: [
+                { name: 'add', value: 593 },
+                { name: 'and', value: 330 },
+                { name: 'average', value: 287 },
+                { name: 'count', value: 277 },
+                { name: 'distinct', value: 292 },
+                { name: 'div', value: 595 },
+                { name: 'eq', value: 594 },
+                { name: 'fn', value: 460 }
+              ]
+            },
+            { name: 'Query', value: 13896 },
+            { name: 'Range', value: 1594 },
+            { name: 'StringUtil', value: 4130 },
+            { name: 'Variable', value: 1124 }
+          ]
+        },
+        {
+          name: 'scale',
+          children: [
+            { name: 'IScaleMap', value: 2105 },
+            { name: 'LinearScale', value: 1316 },
+            { name: 'LogScale', value: 3151 },
+            { name: 'OrdinalScale', value: 3770 },
+            { name: 'Scale', value: 4268 }
+          ]
+        }
+      ]
+    }"
+    orient="LR"
+    :expand-and-collapse="true"
+    :initial-tree-depth="3"
+    edge-shape="polyline"
+    edge-fork-position="63%"
+  />
+</div>
+
+---
+
 # カスタムチャート - BaseChart直接利用
 
 任意のEChartsオプションを直接指定
@@ -345,5 +483,5 @@ layout: center
 高機能でインタラクティブなチャートが利用可能になりました
 
 <script setup>
-import { BarChart, LineChart, PieChart, ScatterChart, RadarChart, FunnelChart, WaterfallChart, RaceChart, BaseChart } from './components/charts';
+import { BarChart, LineChart, PieChart, ScatterChart, RadarChart, FunnelChart, WaterfallChart, RaceChart, SankeyChart, TreeChart, BaseChart } from './components/charts';
 </script>
