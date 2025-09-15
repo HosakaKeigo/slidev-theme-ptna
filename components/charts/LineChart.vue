@@ -57,11 +57,13 @@ const option = computed<EChartsOption>(() => ({
     type: 'value',
     name: props.yAxisName,
   },
-  series: props.series.map((s) => ({
+  series: props.series.map((s, index) => ({
     ...s,
     type: 'line',
-    animationDuration: 800,
-    animationEasing: 'cubicOut',
+    animation: true,
+    animationDuration: 1500,
+    animationEasing: 'linear',
+    animationDelay: index * 200,
   })),
 }));
 </script>

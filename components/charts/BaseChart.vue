@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from 'vue';
+import { computed, ref, watch, onMounted } from 'vue';
 import { use } from 'echarts/core';
 import { CanvasRenderer } from 'echarts/renderers';
 import {
@@ -43,12 +43,38 @@ const props = defineProps<{
   width?: string;
 }>();
 
+const chartRef = ref();
+const key = ref(0);
 const chartOption = computed(() => props.option);
+
+// Check if we're in Slidev context and watch for slide changes
+onMounted(() => {
+  // @ts-ignore
+  if (typeof window !== 'undefined' && window.$slidev) {
+    // Initial key based on current page
+    // @ts-ignore
+    key.value = window.$slidev.nav.currentPage || 0;
+    
+    watch(
+      // @ts-ignore
+      () => window.$slidev?.nav?.currentPage,
+      (newVal) => {
+        if (newVal !== undefined) {
+          // Force complete re-render by changing key
+          key.value = newVal + Date.now(); // Use timestamp to ensure unique key
+        }
+      },
+      { immediate: false }
+    );
+  }
+});
 </script>
 
 <template>
   <div class="chart-container" :style="{ width: width || '100%', height: height || '100%' }">
     <v-chart
+      :key="key"
+      ref="chartRef"
       class="chart"
       :option="chartOption"
       :theme="theme || 'ptna'"

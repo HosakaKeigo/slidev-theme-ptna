@@ -60,8 +60,9 @@ const option = computed<EChartsOption>(() => ({
           },
         },
       })),
-      animationDuration: 800,
-      animationEasing: 'cubicOut',
+      animation: true,
+      animationDuration: 1500,
+      animationEasing: 'sinusoidalInOut',
     },
   ],
 }));

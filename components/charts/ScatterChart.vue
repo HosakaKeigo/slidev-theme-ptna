@@ -75,12 +75,14 @@ const option = computed<EChartsOption>(() => ({
       },
     },
   },
-  series: props.series.map((s) => ({
+  series: props.series.map((s, index) => ({
     ...s,
     type: 'scatter',
     symbolSize: s.symbolSize || 15,
-    animationDuration: 800,
-    animationEasing: 'cubicOut',
+    animation: true,
+    animationDuration: 1000,
+    animationEasing: 'backOut',
+    animationDelay: (idx: number) => idx * 30 + index * 200,
   })),
 }));
 </script>

@@ -14,6 +14,7 @@ Slidevプレゼンテーションにおける動的チャートの表示
 
 <div class="h-80">
   <BarChart
+    :key="$slidev.nav.currentPage"
     title="年間売上推移"
     :labels="['2021年', '2022年', '2023年', '2024年']"
     :series="[
@@ -34,6 +35,7 @@ Slidevプレゼンテーションにおける動的チャートの表示
 
 <div class="h-80">
   <LineChart
+    :key="$slidev.nav.currentPage"
     title="月次アクセス数推移"
     :labels="['1月', '2月', '3月', '4月', '5月', '6月']"
     :series="[
@@ -62,6 +64,7 @@ Slidevプレゼンテーションにおける動的チャートの表示
 
 <div class="h-80">
   <PieChart
+    :key="$slidev.nav.currentPage"
     title="市場シェア分析"
     :data="[
       { value: 1048, name: 'Google' },
@@ -81,6 +84,7 @@ Slidevプレゼンテーションにおける動的チャートの表示
 
 <div class="h-80">
   <ScatterChart
+    :key="$slidev.nav.currentPage"
     title="価格と満足度の相関"
     :series="[
       {
@@ -105,6 +109,7 @@ Slidevプレゼンテーションにおける動的チャートの表示
 
 <div class="h-80">
   <RadarChart
+    :key="$slidev.nav.currentPage"
     title="スキル評価"
     :indicators="[
       { name: 'JavaScript', max: 100 },
@@ -136,6 +141,7 @@ Slidevプレゼンテーションにおける動的チャートの表示
 <div class="grid grid-cols-2 gap-4">
   <div class="h-64">
     <BarChart
+      :key="$slidev.nav.currentPage"
       title="四半期売上"
       :labels="['Q1', 'Q2', 'Q3', 'Q4']"
       :series="[
@@ -146,6 +152,7 @@ Slidevプレゼンテーションにおける動的チャートの表示
   </div>
   <div class="h-64">
     <PieChart
+      :key="$slidev.nav.currentPage + '_pie'"
       title="売上内訳"
       :data="[
         { value: 335, name: '直販' },

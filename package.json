@@ -39,6 +39,7 @@
     }
   },
   "dependencies": {
+    "@slidev/client": "^52.1.0",
     "@slidev/types": "^0.47.0",
     "codemirror-theme-vars": "^0.1.2",
     "echarts": "^5.6.0",

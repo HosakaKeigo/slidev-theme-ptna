@@ -57,9 +57,12 @@ const option = computed<EChartsOption>(() => ({
           shadowColor: 'rgba(0, 0, 0, 0.5)',
         },
       },
+      animation: true,
       animationType: 'scale',
       animationEasing: 'elasticOut',
-      animationDelay: (idx: number) => Math.random() * 200,
+      animationDuration: 1200,
+      animationDelay: (idx: number) => idx * 100,
+      animationDurationUpdate: 600,
     },
   ],
 }));

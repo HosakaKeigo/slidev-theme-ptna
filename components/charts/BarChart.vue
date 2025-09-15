@@ -66,14 +66,16 @@ const option = computed<EChartsOption>(() => ({
     type: 'value',
     name: props.yAxisName,
   },
-  series: props.series.map((s) => ({
+  series: props.series.map((s, index) => ({
     ...s,
     type: 'bar',
     emphasis: {
       focus: 'series',
     },
-    animationDuration: 800,
-    animationEasing: 'cubicOut',
+    animation: true,
+    animationDuration: 1000,
+    animationEasing: 'elasticOut',
+    animationDelay: (idx: number) => idx * 50 + index * 100,
   })),
 }));
 </script>
