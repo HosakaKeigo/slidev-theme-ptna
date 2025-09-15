@@ -440,6 +440,50 @@ Slidevプレゼンテーションにおける動的チャートの表示
 
 ---
 
+# Heatmap Chart - ヒートマップ
+
+カレンダーヒートマップで日次データの可視化
+
+<div class="h-96">
+  <HeatmapChart
+    :key="$slidev.nav.currentPage"
+    title="Daily Step Count - 2024"
+    type="calendar"
+    :year="2024"
+    :min="0"
+    :max="10000"
+    :generate-random-data="true"
+    :color-steps="5"
+  />
+</div>
+
+---
+
+# Grid Heatmap - グリッドヒートマップ
+
+相関マトリックスの可視化
+
+<div class="h-80">
+  <HeatmapChart
+    :key="$slidev.nav.currentPage"
+    title="相関マトリックス"
+    type="grid"
+    :x-labels="['月', '火', '水', '木', '金', '土', '日']"
+    :y-labels="['朝', '昼', '夕', '夜']"
+    :data="[
+      [0, 0, 50], [1, 0, 120], [2, 0, 90], [3, 0, 70], [4, 0, 110], [5, 0, 130], [6, 0, 85],
+      [0, 1, 130], [1, 1, 150], [2, 1, 200], [3, 1, 180], [4, 1, 220], [5, 1, 170], [6, 1, 140],
+      [0, 2, 80], [1, 2, 100], [2, 2, 90], [3, 2, 110], [4, 2, 95], [5, 2, 120], [6, 2, 105],
+      [0, 3, 60], [1, 3, 70], [2, 3, 75], [3, 3, 65], [4, 3, 55], [5, 3, 80], [6, 3, 90]
+    ]"
+    :min="0"
+    :max="250"
+    orientation="horizontal"
+  />
+</div>
+
+---
+
 # カスタムチャート - BaseChart直接利用
 
 任意のEChartsオプションを直接指定
@@ -483,5 +527,5 @@ layout: center
 高機能でインタラクティブなチャートが利用可能になりました
 
 <script setup>
-import { BarChart, LineChart, PieChart, ScatterChart, RadarChart, FunnelChart, WaterfallChart, RaceChart, SankeyChart, TreeChart, BaseChart } from './components/charts';
+import { BarChart, LineChart, PieChart, ScatterChart, RadarChart, FunnelChart, WaterfallChart, RaceChart, SankeyChart, TreeChart, HeatmapChart, BaseChart } from './components/charts';
 </script>

@@ -201,7 +201,7 @@ layout: table-of-contents
 
 ## ECharts チャートコンポーネント
 
-本テーマには、データ可視化のための ECharts 統合機能が含まれています。10種類の主要なチャートコンポーネントと、カスタムチャート用のベースコンポーネントを利用できます。
+本テーマには、データ可視化のための ECharts 統合機能が含まれています。11種類の主要なチャートコンポーネントと、カスタムチャート用のベースコンポーネントを利用できます。
 
 ### 利用可能なチャート
 
@@ -215,12 +215,13 @@ layout: table-of-contents
 - **RaceChart**: レースチャート（動的ランキング）
 - **SankeyChart**: サンキー図（フローの可視化）
 - **TreeChart**: ツリー図（階層構造の可視化）
+- **HeatmapChart**: ヒートマップ（カレンダー/グリッド形式）
 
 ### 基本的な使い方
 
 ```vue
 <script setup>
-import { BarChart, LineChart, PieChart, ScatterChart, RadarChart, FunnelChart, WaterfallChart, RaceChart, SankeyChart, TreeChart } from 'slidev-theme-ptna/components/charts';
+import { BarChart, LineChart, PieChart, ScatterChart, RadarChart, FunnelChart, WaterfallChart, RaceChart, SankeyChart, TreeChart, HeatmapChart } from 'slidev-theme-ptna/components/charts';
 </script>
 
 <div class="h-80">
@@ -517,6 +518,43 @@ import { BarChart, LineChart, PieChart, ScatterChart, RadarChart, FunnelChart, W
 - カスタマイズ可能なエッジ形状
 - ホバー時の強調表示
 
+#### HeatmapChart（ヒートマップ）
+
+日次データや相関マトリックスを色の濃淡で視覚的に表現するチャート。活動量の追跡、時系列パターン分析、相関の可視化などに適しています。
+
+```vue
+<HeatmapChart
+  :key="$slidev.nav.currentPage"
+  title="日次活動量"
+  type="calendar"          // 'calendar' | 'grid'
+  :year="2024"             // カレンダー表示の年
+  :min="0"                 // 最小値
+  :max="10000"             // 最大値
+  :generate-random-data="true"  // ランダムデータ生成
+  :color-steps="5"         // 色段階数
+/>
+
+<!-- グリッドヒートマップの例 -->
+<HeatmapChart
+  :key="$slidev.nav.currentPage"
+  title="相関マトリックス"
+  type="grid"
+  :x-labels="['月', '火', '水', '木', '金']"
+  :y-labels="['朝', '昼', '夕', '夜']"
+  :data="[
+    [0, 0, 50], [1, 0, 120], [2, 0, 90],  // [x, y, value]
+    [0, 1, 130], [1, 1, 150], [2, 1, 200]
+  ]"
+  orientation="horizontal"  // 'horizontal' | 'vertical'
+/>
+```
+
+**特徴：**
+- カレンダー形式とグリッド形式の2種類
+- カスタマイズ可能な色段階
+- インタラクティブなツールチップ
+- 柔軟なデータ形式対応
+
 ### チャートの高さ設定
 
 チャートはコンテナの高さに自動的に適応します。Tailwind CSS のクラスを使用して高さを設定してください：
@@ -540,6 +578,7 @@ import { BarChart, LineChart, PieChart, ScatterChart, RadarChart, FunnelChart, W
 - **RaceChart**: `linear` - スムーズな動的ランキングアニメーション
 - **SankeyChart**: `cubicOut` - 流れるようなアニメーション
 - **TreeChart**: `cubicOut` - 展開アニメーション
+- **HeatmapChart**: `cubicOut` - グラデーションアニメーション
 
 ### 動的データ更新
 

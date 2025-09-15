@@ -11,6 +11,7 @@ import {
   FunnelChart,
   SankeyChart,
   TreeChart,
+  HeatmapChart,
 } from 'echarts/charts';
 import {
   TitleComponent,
@@ -19,6 +20,8 @@ import {
   GridComponent,
   ToolboxComponent,
   PolarComponent,
+  VisualMapComponent,
+  CalendarComponent,
 } from 'echarts/components';
 import VChart from 'vue-echarts';
 import type { EChartsOption } from 'echarts';
@@ -34,12 +37,15 @@ use([
   FunnelChart,
   SankeyChart,
   TreeChart,
+  HeatmapChart,
   TitleComponent,
   TooltipComponent,
   LegendComponent,
   GridComponent,
   ToolboxComponent,
   PolarComponent,
+  VisualMapComponent,
+  CalendarComponent,
 ]);
 
 const props = defineProps<{
