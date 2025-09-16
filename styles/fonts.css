@@ -1,0 +1,81 @@
+html {
+  font-size: 20px !important;
+}
+
+/* スライド本文のフォントサイズ */
+.slidev-layout {
+  font-size: 1.25rem !important;
+  /* 25px相当 */
+}
+
+/* 見出しのフォントサイズ調整 */
+h1 {
+  font-size: 3rem !important;
+  /* 60px相当 */
+}
+
+h2 {
+  font-size: 2.25rem !important;
+  /* 45px相当 */
+}
+
+h3 {
+  font-size: 1.75rem !important;
+  /* 35px相当 */
+}
+
+h4 {
+  font-size: 1.5rem !important;
+  /* 30px相当 */
+}
+
+/* リスト項目 */
+li {
+  font-size: 1.2rem !important;
+  /* 24px相当 */
+  line-height: 1.8;
+}
+
+/* 段落 */
+p {
+  font-size: 1.2rem !important;
+  /* 24px相当 */
+  line-height: 1.8;
+}
+
+/* テーブル */
+table {
+  font-size: 1.15rem !important;
+  /* 23px相当 */
+}
+
+td,
+th {
+  font-size: 1.15rem !important;
+  /* 23px相当 */
+}
+
+/* コードブロック */
+pre,
+code {
+  font-size: 1.1rem !important;
+  /* 22px相当 */
+}
+
+/* インラインコード */
+:not(pre)>code {
+  font-size: 1.05rem !important;
+  /* 21px相当 */
+}
+
+/* 引用 */
+blockquote {
+  font-size: 1.2rem !important;
+  /* 24px相当 */
+}
+
+/* プレゼンターノート */
+.slidev-presenter-notes {
+  font-size: 1.1rem !important;
+  /* 22px相当 */
+}
