@@ -62,7 +62,7 @@ Slidevプレゼンテーションにおける動的チャートの表示
 
 市場シェアの割合表示
 
-<div class="h-80">
+<div class="h-80 flex items-center justify-center">
   <PieChart
     :key="$slidev.nav.currentPage"
     title="市場シェア分析"

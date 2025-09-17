@@ -38,7 +38,7 @@ const option = computed<EChartsOption>(() => ({
   },
   legend: props.showLegend ? {
     orient: 'vertical',
-    left: 'left',
+    right: '10%',
     top: 'middle',
     data: props.data.map(d => d.name),
   } : undefined,
@@ -47,7 +47,7 @@ const option = computed<EChartsOption>(() => ({
       name: props.title || 'データ',
       type: 'pie',
       radius: props.radius,
-      center: props.showLegend ? ['60%', '50%'] : ['50%', '50%'],
+      center: ['50%', '50%'],
       data: props.data,
       roseType: props.roseType,
       emphasis: {
