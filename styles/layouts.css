@@ -136,8 +136,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M30 30c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20zm10 0c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")
-    repeat;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M30 30c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20zm10 0c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
   opacity: 0.1;
 }
 
@@ -276,7 +275,7 @@
 
 /* ツーカラム */
 .slidev-layout.two-cols {
-  padding: 2rem 3rem;
+  padding: 8rem 3rem;
 }
 
 .slidev-layout.two-cols .col-left,
@@ -303,11 +302,13 @@
   list-style-position: inside;
   margin-bottom: 0.5rem;
   color: var(--ptna-text-primary);
-  padding-left: 0; /* 通常のリストのパディングをリセット */
+  padding-left: 0;
+  /* 通常のリストのパディングをリセット */
 }
 
 .text-center ul li::before {
-  display: none; /* 通常のリストの::before疑似要素を無効化 */
+  display: none;
+  /* 通常のリストの::before疑似要素を無効化 */
 }
 
 .text-center ul li::marker {
