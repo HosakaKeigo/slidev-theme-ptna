@@ -386,10 +386,15 @@ imagePosition: left
 
 ---
 layout: timeline
-title: PTNAの歴史
 animate: true
 hideInToc: true
 ---
+
+<template v-slot:title>
+
+# PTNAの歴史
+
+</template>
 
 ## 1977年
 
