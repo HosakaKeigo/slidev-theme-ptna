@@ -583,6 +583,67 @@ hideInToc: true
 - ポイントC
 
 ---
+layout: image-two-cols
+position: right
+images:
+  - https://ptnyan-assets.s3.ap-northeast-1.amazonaws.com/public/filemaker/1000283.png
+  - https://ptnyan-assets.s3.ap-northeast-1.amazonaws.com/public/filemaker/1000284.png
+  - https://ptnyan-assets.s3.ap-northeast-1.amazonaws.com/public/filemaker/1000285.png
+hideInToc: true
+---
+
+# Image Two Cols
+
+## 画像切り替え機能付き
+
+このレイアウトは、コンテンツと画像を2カラムで表示し、複数の画像を切り替えることができます。
+
+### 特徴
+
+- **位置指定**: `position: right` または `position: left`で画像位置を指定
+- **複数画像**: `images`配列で複数画像を指定
+- **v-switch統合**: クリックで画像を切り替え
+- **フルスクリーン画像**: 画像側は全面表示
+
+### 使用例
+
+```yaml
+---
+layout: image-two-cols
+position: left
+images:
+  - /path/to/image1.jpg
+  - /path/to/image2.jpg
+---
+```
+
+---
+layout: image-two-cols
+position: left
+images:
+  - https://ptnyan-assets.s3.ap-northeast-1.amazonaws.com/public/filemaker/1000283.png
+  - https://ptnyan-assets.s3.ap-northeast-1.amazonaws.com/public/filemaker/1000284.png
+  - https://ptnyan-assets.s3.ap-northeast-1.amazonaws.com/public/filemaker/1000285.png
+hideInToc: true
+---
+
+# 左側配置の例
+
+## position: leftの使用
+
+画像を左側に配置し、コンテンツを右側に表示します。
+
+### ピアノ教育の革新
+
+PTNAでは最新の教育メソッドを取り入れ、生徒一人ひとりの個性に合わせた指導を実現しています。
+
+- **デジタルツール活用**: オンラインレッスン対応
+- **個別カリキュラム**: 生徒の成長に合わせた指導計画
+- **継続的な評価**: ステップによる段階的な成長確認
+
+画像は複数設定でき、クリックで切り替えが可能です。
+
+---
 layout: end
 ---
 
