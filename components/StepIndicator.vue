@@ -192,17 +192,17 @@ const getStepClasses = (state: string) => {
             {{ step.description }}
           </div>
 
-          <!-- Musical decoration for current step -->
+          <!-- Cat paw decoration for current step -->
           <div 
             v-if="getStepState(index) === 'current'"
             :class="[
-              'musical-note absolute',
+              'cat-paw absolute',
               layout === 'vertical' ? '-left-8' : '-top-8 left-1/2 transform -translate-x-1/2',
-              'text-ptna-primary opacity-50',
+              'text-ptna-primary opacity-50 text-2xl',
               animate ? 'animate-float' : '',
             ]"
           >
-            ♪
+            🐾
           </div>
         </div>
       </div>
@@ -253,7 +253,7 @@ const getStepClasses = (state: string) => {
   animation: none;
 }
 
-.flex-col .musical-note.animate-float {
+.flex-col .cat-paw.animate-float {
   animation: float-vertical 2s ease-in-out infinite;
 }
 
@@ -285,7 +285,7 @@ const getStepClasses = (state: string) => {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
-.step-item:hover .musical-note {
+.step-item:hover .cat-paw {
   opacity: 1;
 }
 
