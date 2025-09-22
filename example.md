@@ -60,6 +60,7 @@ layout: section
 
 ---
 layout: default
+hideInToc: true
 ---
 
 # PTNAの主な活動
@@ -121,6 +122,7 @@ PTNAの体系的な教育システムをご紹介します。
 
 ---
 layout: fact
+hideInToc: true
 ---
 
 # 77
@@ -129,6 +131,7 @@ layout: fact
 
 ---
 layout: quote
+hideInToc: true
 ---
 
 # "音楽は人生を豊かにする最高の贈り物である"
@@ -137,6 +140,7 @@ _— PTNA創設者の言葉_
 
 ---
 layout: statement
+hideInToc: true
 ---
 
 # 音楽教育の未来を共に創造しましょう
@@ -144,6 +148,7 @@ layout: statement
 ---
 layout: center
 class: text-center
+hideInToc: true
 ---
 
 # コードサンプル
@@ -170,6 +175,7 @@ class PTNAInstructor {
 
 ---
 layout: default
+hideInToc: true
 ---
 
 # YouTubeコンポーネントの例
@@ -207,6 +213,7 @@ Slidevでは、built-inのYouTubeコンポーネントを使用して動画を�
 
 ---
 layout: default
+hideInToc: true
 ---
 
 # 表の例
@@ -258,6 +265,7 @@ flowchart LR
 
 ---
 layout: default
+hideInToc: true
 ---
 
 # Mermaid ガントチャートの例
@@ -284,6 +292,7 @@ gantt
 
 ---
 layout: default
+hideInToc: true
 ---
 
 # Mermaid 円グラフの例
@@ -302,6 +311,7 @@ pie showData
 
 ---
 layout: default
+hideInToc: true
 ---
 
 # Mermaid シーケンス図の例
@@ -331,6 +341,7 @@ sequenceDiagram
 ---
 layout: image-left
 image: https://ptnyan-assets.s3.ap-northeast-1.amazonaws.com/public/filemaker/1000283.png
+hideInToc: true
 ---
 
 # 画像とテキストのレイアウト例
@@ -350,6 +361,7 @@ image: https://ptnyan-assets.s3.ap-northeast-1.amazonaws.com/public/filemaker/10
 layout: image-right
 image: https://ptnyan-assets.s3.ap-northeast-1.amazonaws.com/public/filemaker/1000283.png
 imagePosition: left
+hideInToc: true
 ---
 
 # 画像を左側に配置
@@ -373,8 +385,116 @@ imagePosition: left
 テキストの内容に応じて、画像の位置を柔軟に調整できます。
 
 ---
+layout: timeline
+title: PTNAの歴史
+animate: true
+hideInToc: true
+---
+
+## 1977年
+
+全日本ピアノ指導者協会（PTNA）設立
+
+## 1980年
+
+第1回ピティナ・ピアノコンペティション開催
+
+## 1990年
+
+指導者育成プログラム開始
+
+## 2000年
+
+ピアノステップ事業開始
+
+## 2010年
+
+会員数1万人突破
+
+## 2024年
+
+創立47周年を迎える
+
+---
+layout: comparison
+leftTitle: 従来の指導法
+rightTitle: PTNAメソッド
+highlight: right
+hideInToc: true
+---
+
+::title::
+
+# 指導法の比較
+
+::left::
+
+- 画一的なカリキュラム
+- 技術重視の指導
+- 固定的な評価基準
+- 限定的な発表機会
+
+::right::
+
+- 個別最適化されたカリキュラム
+- 音楽性と技術のバランス
+- 段階的な評価システム
+- 豊富な演奏機会（ステップ・コンペ）
+
+PTNAメソッドは、一人ひとりの成長に合わせた指導を実現します。
+
+---
+layout: profile
+image: https://ptnyan-assets.s3.ap-northeast-1.amazonaws.com/public/filemaker/1000283.png
+name: 山田太郎
+hideInToc: true
+title: ピアノ指導者
+organization: PTNA正会員・指導者賞受賞
+email: yamada@example.com
+website: https://example.com
+---
+
+## プロフィール
+
+東京音楽大学卒業後、ヨーロッパで研鑽を積む。帰国後はPTNA正会員として後進の指導にあたる。
+
+### 指導実績
+
+- コンペティション全国大会出場者多数輩出
+- 指導者賞3年連続受賞
+- ステップアドバイザー
+
+### 専門分野
+
+- 幼児期のピアノ導入指導
+- コンクール対策
+- 音楽理論・ソルフェージュ
+
+---
+layout: center
+hideInToc: true
+clicks: 5
+---
+
+# インタラクティブコンポーネント
+
+<v-click>
+<StepIndicator
+  :steps="[
+    { title: '入会申込', description: 'Webサイトから申込', completed: $clicks >= 2 },
+    { title: '審査', description: '資格確認と承認', completed: $clicks >= 3 },
+    { title: '研修受講', description: '基礎研修プログラム', completed: $clicks >= 4 },
+    { title: '認定取得', description: '指導者ライセンス発行', completed: $clicks >= 5 }
+  ]"
+  :current="Math.min($clicks - 1, 3)"
+  layout="horizontal"
+/>
+</v-click>
+
+---
 layout: table-of-contents
 columns: 3
+hideInToc: true
 ---
 
 # Table of Contentsレイアウトの例
@@ -432,6 +552,7 @@ hideInToc: true
 
 ---
 layout: two-cols-header
+hideInToc: true
 ---
 
 # 2カラムレイアウトの例
