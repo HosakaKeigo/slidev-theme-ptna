@@ -62,11 +62,16 @@ const props = defineProps({
 const style = computed(() => handleBackground(props.background));
 
 // Parse items from slots or use props
-const items = ref([]);
+interface TimelineItem {
+  year: string;
+  description: string;
+}
+
+const items = ref<TimelineItem[]>([]);
 
 onMounted(() => {
   if (props.items && props.items.length > 0) {
-    items.value = props.items;
+    items.value = props.items as TimelineItem[];
   } else {
     // Parse from slot content
     const content = document.querySelector(".timeline-content-parser");
