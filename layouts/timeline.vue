@@ -157,18 +157,18 @@ onMounted(() => {
 
 <style scoped>
 .slidev-layout.timeline {
-  @apply h-full;
+  height: 100%;
   background: white;
 }
 
 /* Timeline container */
 .timeline-container {
-  @apply relative;
+  position: relative;
 }
 
 /* Staff container for horizontal timeline */
 .staff-container {
-  @apply absolute;
+  position: absolute;
   top: 20%;
   left: 0;
   right: 0;
@@ -178,7 +178,7 @@ onMounted(() => {
 
 /* Staff lines group */
 .staff-lines-group {
-  @apply absolute;
+  position: absolute;
   left: 0;
   right: 0;
   top: 50%;
@@ -198,23 +198,32 @@ onMounted(() => {
 
 /* Timeline track */
 .timeline-track {
-  @apply relative;
+  position: relative;
   min-height: 200px;
 }
 
 /* Timeline item */
 .timeline-item {
-  @apply flex flex-col items-center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Marker container */
 .marker-container {
-  @apply flex flex-col items-center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Year dot/icon */
 .year-dot {
-  @apply w-16 h-16 rounded-full flex items-center justify-center;
+  width: 4rem; /* 16 * 0.25rem */
+  height: 4rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: var(--ptna-primary);
   border: 4px solid white;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -223,22 +232,28 @@ onMounted(() => {
 }
 
 .note-symbol {
-  @apply text-2xl text-white;
+  font-size: 1.5rem; /* 2xl */
+  color: white;
 }
 
 /* Year label */
 .year-label {
-  @apply mt-3 text-lg font-bold;
+  margin-top: 0.75rem; /* mt-3 */
+  font-size: 1.125rem; /* text-lg */
+  font-weight: 700; /* font-bold */
   color: var(--ptna-primary);
 }
 
 /* Description */
 .description-container {
-  @apply mt-4 text-center max-w-[150px];
+  margin-top: 1rem; /* mt-4 */
+  text-align: center;
+  max-width: 150px;
 }
 
 .description {
-  @apply text-sm font-medium;
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 500; /* font-medium */
   color: var(--ptna-text-primary);
   line-height: 1.4;
   background: rgba(255, 255, 255, 0.9);
@@ -248,21 +263,23 @@ onMounted(() => {
 
 /* Vertical layout styles */
 .timeline-track.flex-col {
-  @apply relative;
+  position: relative;
   padding-left: 4rem;
 }
 
 .timeline-track.flex-col .timeline-item {
-  @apply flex-row items-start;
+  flex-direction: row;
+  align-items: flex-start;
 }
 
 .timeline-track.flex-col .marker-container {
-  @apply absolute left-0;
+  position: absolute;
+  left: 0;
 }
 
 /* Vertical staff lines for vertical layout */
 .vertical-connector {
-  @apply absolute;
+  position: absolute;
   left: 1.5rem;
   top: 4rem;
   bottom: -2rem;
@@ -284,7 +301,7 @@ onMounted(() => {
 /* Add middle lines for vertical staff */
 .timeline-track.flex-col .timeline-item::after {
   content: "";
-  @apply absolute;
+  position: absolute;
   left: 1.5rem;
   top: 4rem;
   bottom: -2rem;
@@ -301,11 +318,14 @@ onMounted(() => {
 }
 
 .timeline-track.flex-col .description-container {
-  @apply ml-6 text-left max-w-none flex-1;
+  margin-left: 1.5rem; /* ml-6 */
+  text-align: left;
+  max-width: none;
+  flex: 1;
 }
 
 .timeline-track.flex-col .description {
-  @apply text-base;
+  font-size: 1rem; /* text-base */
 }
 
 /* Animation */
@@ -327,12 +347,15 @@ onMounted(() => {
 
 /* Title styling */
 .timeline-title {
-  @apply absolute top-12 left-12;
+  position: absolute;
+  top: 3rem; /* top-12 */
+  left: 3rem; /* left-12 */
   z-index: 20;
 }
 
 .timeline-title h1 {
-  @apply text-3xl font-bold;
+  font-size: 1.875rem; /* text-3xl */
+  font-weight: 700; /* font-bold */
   color: var(--ptna-primary);
   text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
 }
@@ -345,31 +368,35 @@ onMounted(() => {
 /* Responsive */
 @media (max-width: 768px) {
   .slidev-layout.timeline {
-    @apply px-4 py-6;
+    padding-left: 1rem; /* px-4 */
+    padding-right: 1rem;
+    padding-top: 1.5rem; /* py-6 */
+    padding-bottom: 1.5rem;
   }
 
   .timeline-track:not(.flex-col) {
-    @apply flex-col;
+    flex-direction: column;
   }
 
   .timeline-item {
-    @apply mb-8;
+    margin-bottom: 2rem; /* mb-8 */
   }
 
   .year-dot {
-    @apply w-12 h-12;
+    width: 3rem; /* w-12 */
+    height: 3rem; /* h-12 */
   }
 
   .note-symbol {
-    @apply text-2xl;
+    font-size: 1.5rem; /* text-2xl */
   }
 
   .year-label {
-    @apply text-lg;
+    font-size: 1.125rem; /* text-lg */
   }
 
   .description {
-    @apply text-sm;
+    font-size: 0.875rem; /* text-sm */
   }
 }
 </style>
